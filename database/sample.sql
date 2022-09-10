@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 10, 2022 at 06:43 AM
+-- Generation Time: Sep 10, 2022 at 07:23 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.0.19
 
@@ -115,7 +115,7 @@ CREATE TABLE `superadmin` (
 --
 
 INSERT INTO `superadmin` (`superadminId`, `name`, `email`, `password`, `tokencode`, `profile`, `created_at`, `updated_at`) VALUES
-(1, 'Viscayno, Andrei', 'andrei.m.viscayno@gmail.com', 'e64b78fc3bc91bcbc7dc232ba8ec59e0', 'cf3d41ef87dbd96fe6b963af1eb9c0f6', 'profile.png', '2022-07-03 00:09:13', '2022-09-10 04:40:41');
+(1, 'Viscayno, Andrei', 'andrei.m.viscayno@gmail.com', 'a2aa56ae8d0a2e574474a0a7bbe30cb5', 'cf3d41ef87dbd96fe6b963af1eb9c0f6', 'profile.png', '2022-07-03 00:09:13', '2022-09-10 04:49:43');
 
 -- --------------------------------------------------------
 
@@ -173,10 +173,6 @@ CREATE TABLE `tb_logs` (
   `activity` varchar(145) NOT NULL,
   `date` varchar(145) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `tb_logs`
---
 
 -- --------------------------------------------------------
 
@@ -306,7 +302,7 @@ ALTER TABLE `system_logo`
 -- AUTO_INCREMENT for table `tb_logs`
 --
 ALTER TABLE `tb_logs`
-  MODIFY `activityId` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `activityId` int(100) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `user`

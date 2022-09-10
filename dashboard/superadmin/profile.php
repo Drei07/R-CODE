@@ -51,6 +51,11 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 				</ul>
 			</li>
 
+			<li class="divider" data-text="Audit Trail">Audit Trail</li>
+			<li>
+				<a href="logs"><i class='bx bxs-notepad icon' ></i>Logs</a>
+			</li>
+
 		</ul>
 	</section>
 	<!-- SIDEBAR -->
