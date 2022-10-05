@@ -30,7 +30,6 @@ SET time_zone = "+00:00";
 CREATE TABLE `admin` (
   `userId` int(145) NOT NULL,
   `employeeId` varchar(145) DEFAULT NULL,
-  `adminPosition` varchar(145) DEFAULT NULL,
   `adminFirst_Name` varchar(145) DEFAULT NULL,
   `adminMiddle_Name` varchar(145) DEFAULT NULL,
   `adminLast_Name` varchar(145) DEFAULT NULL,
@@ -48,8 +47,8 @@ CREATE TABLE `admin` (
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`userId`, `employeeId`, `adminPosition`, `adminFirst_Name`, `adminMiddle_Name`, `adminLast_Name`, `adminEmail`, `adminPassword`, `adminStatus`, `tokencode`, `adminProfile`, `account_status`, `created_at`, `updated_at`) VALUES
-(1, '724758478978', 'WEB DEV', 'Andrei', 'Manalansan', 'Viscayno', 'andrei.m.viscayno@gmail.com', '169b7c16679df9a7daa4efe1cdd43e55', 'Y', 'd5cbbb984afb41c1adf88a8e19740cc9', 'profile.png', 'active', '2022-07-07 05:19:44', '2022-08-13 05:05:14');
+INSERT INTO `admin` (`userId`, `employeeId`, `adminFirst_Name`, `adminMiddle_Name`, `adminLast_Name`, `adminEmail`, `adminPassword`, `adminStatus`, `tokencode`, `adminProfile`, `account_status`, `created_at`, `updated_at`) VALUES
+(1, '724758478978', 'Andrei', 'Manalansan', 'Viscayno', 'andrei.m.viscayno@gmail.com', '169b7c16679df9a7daa4efe1cdd43e55', 'Y', 'd5cbbb984afb41c1adf88a8e19740cc9', 'profile.png', 'active', '2022-07-07 05:19:44', '2022-08-13 05:05:14');
 
 -- --------------------------------------------------------
 
@@ -183,7 +182,6 @@ CREATE TABLE `tb_logs` (
 CREATE TABLE `user` (
   `userId` int(255) NOT NULL,
   `employeeId` varchar(145) DEFAULT NULL,
-  `userPosition` varchar(145) DEFAULT NULL,
   `userFirst_Name` varchar(145) DEFAULT NULL,
   `userMiddle_Name` varchar(145) DEFAULT NULL,
   `userLast_Name` varchar(145) DEFAULT NULL,
@@ -203,8 +201,8 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`userId`, `employeeId`, `userPosition`, `userFirst_Name`, `userMiddle_Name`, `userLast_Name`, `userPhone_Number`, `userEmail`, `userPassword`, `userStatus`, `tokencode`, `userProfile`, `uniqueID`, `account_status`, `created_at`, `updated_at`) VALUES
-(197, '20183473', 'WEB DEVS', 'ANDREI', 'MANALANSAN', 'VISCAYNO', '9776621929', 'andreishania07012000@gmail.com', '5a30c9609b52fe348fb6925896e061de', 'Y', 'b3c2dc375edf8a69d45bcbeac8f805a5', 'profile.png', '68414511', 'active', '2022-07-05 11:39:33', '2022-09-10 04:39:51');
+INSERT INTO `user` (`userId`, `employeeId`, `userFirst_Name`, `userMiddle_Name`, `userLast_Name`, `userPhone_Number`, `userEmail`, `userPassword`, `userStatus`, `tokencode`, `userProfile`, `uniqueID`, `account_status`, `created_at`, `updated_at`) VALUES
+(197, '20183473', 'ANDREI', 'MANALANSAN', 'VISCAYNO', '9776621929', 'andreishania07012000@gmail.com', '5a30c9609b52fe348fb6925896e061de', 'Y', 'b3c2dc375edf8a69d45bcbeac8f805a5', 'profile.png', '68414511', 'active', '2022-07-05 11:39:33', '2022-09-10 04:39:51');
 
 --
 -- Indexes for dumped tables

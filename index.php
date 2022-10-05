@@ -11,99 +11,109 @@ include_once 'dashboard/superadmin/controller/select-settings-configuration-cont
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" href="src/img/<?php echo $logo ?>">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="src/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="src/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="src/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+	<link rel="stylesheet" type="text/css" href="src/vendor/animate/animate.css">	
+	<link rel="stylesheet" type="text/css" href="src/vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="src/vendor/animsition/css/animsition.min.css">
+	<link rel="stylesheet" type="text/css" href="src/vendor/select2/select2.min.css">	
+	<link rel="stylesheet" type="text/css" href="src/vendor/daterangepicker/daterangepicker.css">
+	<link rel="stylesheet" type="text/css" href="src/css/util.css?v=<?php echo time(); ?>">
+	<link rel="stylesheet" type="text/css" href="src/css/main.css?v=<?php echo time(); ?>">
+
 	<script src="https://www.google.com/recaptcha/api.js?render=<?php echo $SiteKEY ?>"></script>
-    <link rel="stylesheet" href="src/css/login.css?v=<?php echo time(); ?>">
+
     <title>Sign In</title>
 </head>
-<body class="my-login-page">
-	<section class="h-100">
-		<div class="container h-100">
-			<div class="row h-100">
-				<div class="card-wrapper">
-					<div class="brand">
-						<img src="src/img/<?php echo $logo ?>" alt="logo">
+<body>
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-form-title" style="background-image: url(src/img/fish.jpg);">
+					<span class="login100-form-title-1">
+						Sign In
+					</span>
+				</div>
+
+				<form action="dashboard/user/authentication/user-signin" method="POST" novalidate="" class="login100-form validate-form">
+
+					<input type="hidden" id="g-token" name="g-token">
+
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Email is required">
+						<span class="label-input100">Email</span>
+						<input class="input100" type="email" name="email" placeholder="Enter email">
+						<span class="focus-input100"></span>
 					</div>
-					<div class="card fat">
-						<div class="card-body">
-							<h4 class="card-title">Sign In</h4>
-							<form action="dashboard/user/authentication/user-signin.php" method="POST" class="my-login-validation" novalidate="">
-							<input type="hidden" id="g-token" name="g-token">
-								<div class="form-group">
-									<label for="email">E-mail</label>
-									<input id="email" type="email" class="form-control" name="email" required autofocus>
-									<div class="invalid-feedback">
-										E-mail is invalid
-									</div>
-								</div>
 
-								<div class="form-group">
-									<label for="password">Password
-										<a href="public/user/forgot-password" class="float-right">
-											Forgot Password?
-										</a>
-									</label>
-									<input id="password" type="password" class="form-control" name="password" required data-eye>
-								    <div class="invalid-feedback">
-								    	Password is required
-							    	</div>
-								</div>
+					<div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
+						<span class="label-input100">Password</span>
+						<input class="input100" type="password" name="password" placeholder="Enter password">
+						<span class="focus-input100"></span>
+					</div>
 
-								<div class="form-group">
-									<div class="custom-checkbox custom-control">
-										<input type="checkbox" name="remember" id="remember" class="custom-control-input">
-										<label for="remember" class="custom-control-label">Remember Me</label>
-									</div>
-								</div>
+					<div class="flex-sb-m w-full p-b-30">
 
-								<div class="form-group m-0">
-									<button type="submit"  id="submit" class="btn btn-primary btn-block" name="btn-signin">
-										Sign In
-									</button>
-								</div>
-							</form>
+						<div>
+							<a href="public/user/forgot-password" class="txt1">
+								Forgot Password?
+							</a>
 						</div>
 					</div>
-					<footer>&copy; <?php echo $system_copyright ?></footer>
-				</div>
+
+					<div class="container-login100-form-btn">
+						<button type="submit" name="btn-signin" id="submit" class="login100-form-btn">
+							Signin
+						</button>
+					</div>
+				</form>
 			</div>
 		</div>
-	</section>
+	</div>
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="src/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="src/vendor/animsition/js/animsition.min.js"></script>
+	<script src="src/vendor/bootstrap/js/popper.js"></script>
+	<script src="src/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="src/vendor/select2/select2.min.js"></script>
+	<script src="src/vendor/daterangepicker/moment.min.js"></script>
+	<script src="src/vendor/daterangepicker/daterangepicker.js"></script>
+	<script src="src/vendor/countdowntime/countdowntime.js"></script>
+	<script src="src/js/main.js"></script>
 	<script src="src/node_modules/sweetalert/dist/sweetalert.min.js"></script>
 	<script src="src/node_modules/jquery/dist/jquery.min.js"></script>
-	<script src="src/js/SigninForm.js"></script>
+	
+
+
 	<script>
 
 		// CAPTCHA
-			grecaptcha.ready(function() {
-			grecaptcha.execute('<?php echo $SiteKEY ?>', {action: 'submit'}).then(function(token) {
-				document.getElementById("g-token").value = token;
-			});
-			});
+		grecaptcha.ready(function() {
+		grecaptcha.execute('<?php echo $SiteKEY ?>', {action: 'submit'}).then(function(token) {
+			document.getElementById("g-token").value = token;
+		});
+		});
 
 	</script>
 
-	<!-- SWEET ALERT -->
-	<?php
+<!-- SWEET ALERT -->
+<?php
 
-		if(isset($_SESSION['status']) && $_SESSION['status'] !='')
-		{
-			?>
-			<script>
-				swal({
-				title: "<?php echo $_SESSION['status_title']; ?>",
-				text: "<?php echo $_SESSION['status']; ?>",
-				icon: "<?php echo $_SESSION['status_code']; ?>",
-				button: false,
-				timer: <?php echo $_SESSION['status_timer']; ?>,
-				});
-			</script>
-			<?php
-			unset($_SESSION['status']);
-		}
-	?>
+	if(isset($_SESSION['status']) && $_SESSION['status'] !='')
+	{
+		?>
+		<script>
+			swal({
+			title: "<?php echo $_SESSION['status_title']; ?>",
+			text: "<?php echo $_SESSION['status']; ?>",
+			icon: "<?php echo $_SESSION['status_code']; ?>",
+			button: false,
+			timer: <?php echo $_SESSION['status_timer']; ?>,
+			});
+		</script>
+		<?php
+		unset($_SESSION['status']);
+	}
+?>
 </body>
 </html>

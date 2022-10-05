@@ -22,247 +22,164 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" href="../../src/img/<?php echo $logo ?>">
-	<link rel="stylesheet" href="../../src/node_modules/bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../../src/node_modules/boxicons/css/boxicons.min.css">
-	<link rel="stylesheet" href="../../src/node_modules/aos/dist/aos.css">
-    <link rel="stylesheet" href="../../src/css/admin.css?v=<?php echo time(); ?>">
-	<title>Dashboard</title>
+	<link rel="stylesheet" href="../../src/css/admin.css?v=<?php echo time(); ?>" type="text/css"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>Home</title>
 </head>
 <body>
 
 
-	<!-- SIDEBAR -->
-	<section id="sidebar" class="hide">
-		<a href="#" class="brand"><img src="../../src/img/<?php echo $logo ?>" alt="logo" class="brand-img"></i>&nbsp;&nbsp;SVNHS</a>
-		<ul class="side-menu">
-			<li><a href="#" class="active"><i class='bx bxs-dashboard icon' ></i> Dashboard</a></li>
-			<li class="divider" data-text="main">Main</li>
-			<li>
-				<a href="#"><i class='bx bxs-user-pin icon' ></i> User <i class='bx bx-chevron-right icon-right' ></i></a>
-				<ul class="side-dropdown">
-					<li><a href="#">Data</a></li>
-				</ul>
-			</li>
-            <li>
-				<a href="#"><i class='bx bxs-user icon' ></i> Admin <i class='bx bx-chevron-right icon-right' ></i></a>
-				<ul class="side-dropdown">
-					<li><a href="#">Data</a></li>
-				</ul>
-			</li>
+	<body>
+		
+		<div id="mySidenav" class="sidenav">
+		<p class="logo"><span>M</span>-SoftTech</p>
+	  <a href="#" class="icon-a"><i class="fa fa-dashboard icons"></i>   Dashboard</a>
+	  <a href="#"class="icon-a"><i class="fa fa-users icons"></i>   Customers</a>
+	  <a href="#"class="icon-a"><i class="fa fa-list icons"></i>   Projects</a>
+	  <a href="#"class="icon-a"><i class="fa fa-shopping-bag icons"></i>   Orders</a>
+	  <a href="#"class="icon-a"><i class="fa fa-tasks icons"></i>   Inventory</a>
+	  <a href="#"class="icon-a"><i class="fa fa-user icons"></i>   Accounts</a>
+	  <a href="#"class="icon-a"><i class="fa fa-list-alt icons"></i>   Tasks</a>
 
-			<li class="divider" data-text="Audit Trail">Audit Trail</li>
-			<li>
-				<a href="logs"><i class='bx bxs-notepad icon' ></i>Logs</a>
-			</li>
+	</div>
+	<div id="main">
 
-		</ul>
-	</section>
-	<!-- SIDEBAR -->
+		<div class="head">
+			<div class="col-div-6">
+	<span style="font-size:30px;cursor:pointer; color: white;" class="nav"  >☰ Dashboard</span>
+	<span style="font-size:30px;cursor:pointer; color: white;" class="nav2"  >☰ Dashboard</span>
+	</div>
+		
+		<div class="col-div-6">
+		<div class="profile">
 
-	<!-- NAVBAR -->
-	<section id="content">
-		<!-- NAVBAR -->
-		<nav>
-			<i class='bx bx-menu toggle-sidebar' ></i>
+			<img src="../../src/img/profile.png" class="pro-img" />
+			<p>Manoj Adhikari <span>UI / UX DESIGNER</span></p>
+		</div>
+	</div>
+		<div class="clearfix"></div>
+	</div>
 
-			<a href="#" class="nav-link">
-				<i class='bx bxs-bell icon' ></i>
-				<span class="badge">5</span>
-			</a>
-			<a href="#" class="nav-link">
-				<i class='bx bxs-message-square-dots icon' ></i>
-				<span class="badge">8</span>
-			</a>
-			<span class="divider"></span>
-			<div class="dropdown">
-				<span><?php echo $row['name']; ?></i></span>
-			</div>	
-			<div class="profile">
-				<img src="../../src/img/<?php echo $profile ?>" alt="">
-				<ul class="profile-link">
-					<li><a href="profile"><i class='bx bxs-user-circle icon' ></i> Profile</a></li>
-					<li><a href="settings"><i class='bx bxs-cog' ></i> Settings</a></li>
-					<li><a href="authentication/superadmin-signout" class="btn-signout"><i class='bx bxs-log-out-circle' ></i> Signout</a></li>
-				</ul>
+		<div class="clearfix"></div>
+		<br/>
+		
+		<div class="col-div-3">
+			<div class="box">
+				<p>67<br/><span>Customers</span></p>
+				<i class="fa fa-users box-icon"></i>
 			</div>
-		</nav>
-		<!-- NAVBAR -->
-
-		<!-- MAIN -->
-		<main>
-			<h1 class="title">Dashboard</h1>
-			<ul class="breadcrumbs">
-				<li><a href="home" >Home</a></li>
-				<li class="divider">|</li>
-                <li><a href="" class="active">Dashboard</a></li>
-			</ul>
-			<div class="dashboard-data">
-				<div class="dashboard-card">
-					<div class="head">
-						<div>
-							<h2>20</h2>
-							<p>G11 Class</p>
-						</div>
-						<i class='bx bxs-book-reader icon' ></i>
-					</div>
-					<span class="progress" data-value="40%"></span>				
-				</div>
-				<div class="dashboard-card">
-					<div class="head">
-						<div>
-							<h2>20</h2>
-							<p>G12 Class</p>
-						</div>
-						<i class='bx bxs-book-reader icon' ></i>
-					</div>
-					<span class="progress" data-value="60%"></span>
-				</div>
-				<div class="dashboard-card">
-					<div class="head">
-						<div>
-							<h2>20</h2>
-							<p>G11 Advisory</p>
-						</div>
-						<i class='bx bxs-book-reader icon' ></i>
-					</div>
-					<span class="progress" data-value="30%"></span>
-				</div>
-				<div class="dashboard-card">
-					<div class="head">
-						<div>
-							<h2>20</h2>
-							<p>G12 Advisory</p>
-						</div>
-						<i class='bx bxs-book-reader icon' ></i>
-					</div>
-					<span class="progress" data-value="80%"></span>
-				</div>
+		</div>
+		<div class="col-div-3">
+			<div class="box">
+				<p>88<br/><span>Projects</span></p>
+				<i class="fa fa-list box-icon"></i>
 			</div>
-			<div class="data">
-				<div class="content-data">
-					<div class="head">
-						<h3>Calendar</h3>
-						<div class="menu">
-							<i class='bx bx-dots-horizontal-rounded icon'></i>
-							<ul class="menu-link">
-								<li><a href="#">Edit</a></li>
-								<li><a href="#">Save</a></li>
-								<li><a href="#">Remove</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="chart">
-						<div id="chart"></div>
-					</div>
-				</div>
-				<div class="content-data">
-					<div class="head">
-						<h3>Chatbox</h3>
-						<div class="menu">
-							<i class='bx bx-dots-horizontal-rounded icon'></i>
-							<ul class="menu-link">
-								<li><a href="#">Edit</a></li>
-								<li><a href="#">Save</a></li>
-								<li><a href="#">Remove</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="chat-box">
-						<p class="day"><span>Today</span></p>
-						<div class="msg">
-							<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVvcGxlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
-							<div class="chat">
-								<div class="profile">
-									<span class="username">Alan</span>
-									<span class="time">18:30</span>
-								</div>
-								<p>Hello</p>
-							</div>
-						</div>
-						<div class="msg me">
-							<div class="chat">
-								<div class="profile">
-									<span class="time">18:30</span>
-								</div>
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque voluptatum eos quam dolores eligendi exercitationem animi nobis reprehenderit laborum! Nulla.</p>
-							</div>
-						</div>
-						<div class="msg me">
-							<div class="chat">
-								<div class="profile">
-									<span class="time">18:30</span>
-								</div>
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, architecto!</p>
-							</div>
-						</div>
-						<div class="msg me">
-							<div class="chat">
-								<div class="profile">
-									<span class="time">18:30</span>
-								</div>
-								<p>Lorem ipsum, dolor sit amet.</p>
-							</div>
-						</div>
-					</div>
-					<form action="#">
-						<div class="form-group">
-							<input type="text" placeholder="Type...">
-							<button type="submit" class="btn-send"><i class='bx bxs-send' ></i></button>
-						</div>
-					</form>
-				</div>
+		</div>
+		<div class="col-div-3">
+			<div class="box">
+				<p>99<br/><span>Orders</span></p>
+				<i class="fa fa-shopping-bag box-icon"></i>
 			</div>
-		</main>
-		<!-- MAIN -->
-	</section>
-	<!-- END NAVBAR -->
+		</div>
+		<div class="col-div-3">
+			<div class="box">
+				<p>78<br/><span>Tasks</span></p>
+				<i class="fa fa-tasks box-icon"></i>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+		<br/><br/>
+		<div class="col-div-8">
+			<div class="box-8">
+			<div class="content-box">
+				<p>Top Selling Projects <span>Sell All</span></p>
+				<br/>
+				<table>
+	  <tr>
+	    <th>Company</th>
+	    <th>Contact</th>
+	    <th>Country</th>
+	  </tr>
+	  <tr>
+	    <td>Alfreds Futterkiste</td>
+	    <td>Maria Anders</td>
+	    <td>Germany</td>
+	  </tr>
+	  <tr>
+	    <td>Centro comercial Moctezuma</td>
+	    <td>Francisco Chang</td>
+	    <td>Mexico</td>
+	  </tr>
+	  <tr>
+	    <td>Ernst Handel</td>
+	    <td>Roland Mendel</td>
+	    <td>Austria</td>
+	  </tr>
+	  <tr>
+	    <td>Island Trading</td>
+	    <td>Helen Bennett</td>
+	    <td>UK</td>
+	  </tr>
+	  
+	  
+	</table>
+			</div>
+		</div>
+		</div>
 
-	<script src="../../src/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script src="../../src/node_modules/sweetalert/dist/sweetalert.min.js"></script>
-	<script src="../../src/node_modules/jquery/dist/jquery.min.js"></script>
-	<script src="../../src/js/dashboard.js"></script>
+		<div class="col-div-4">
+			<div class="box-4">
+			<div class="content-box">
+				<p>Total Sale <span>Sell All</span></p>
 
+				<div class="circle-wrap">
+	    <div class="circle">
+	      <div class="mask full">
+	        <div class="fill"></div>
+	      </div>
+	      <div class="mask half">
+	        <div class="fill"></div>
+	      </div>
+	      <div class="inside-circle"> 70% </div>
+	    </div>
+	  </div>
+			</div>
+		</div>
+		</div>
+			
+		<div class="clearfix"></div>
+	</div>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script>
 
-		// Signout
-		$('.btn-signout').on('click', function(e){
-		e.preventDefault();
-		const href = $(this).attr('href')
+	  $(".nav").click(function(){
+	    $("#mySidenav").css('width','70px');
+	    $("#main").css('margin-left','70px');
+	    $(".logo").css('visibility', 'hidden');
+	    $(".logo span").css('visibility', 'visible');
+	     $(".logo span").css('margin-left', '-10px');
+	     $(".icon-a").css('visibility', 'hidden');
+	     $(".icons").css('visibility', 'visible');
+	     $(".icons").css('margin-left', '-8px');
+	      $(".nav").css('display','none');
+	      $(".nav2").css('display','block');
+	  });
 
-				swal({
-				title: "Signout?",
-				text: "Are you sure do you want to signout?",
-				icon: "warning",
-				buttons: true,
-				dangerMode: true,
-			})
-			.then((willSignout) => {
-				if (willSignout) {
-				document.location.href = href;
-				}
-			});
-		})
+	$(".nav2").click(function(){
+	    $("#mySidenav").css('width','300px');
+	    $("#main").css('margin-left','300px');
+	    $(".logo").css('visibility', 'visible');
+	     $(".icon-a").css('visibility', 'visible');
+	     $(".icons").css('visibility', 'visible');
+	     $(".nav").css('display','block');
+	      $(".nav2").css('display','none');
+	 });
 
 	</script>
 
-	<!-- SWEET ALERT -->
-	<?php
+	</body>
 
-	if(isset($_SESSION['status']) && $_SESSION['status'] !='')
-	{
-		?>
-		<script>
-			swal({
-			title: "<?php echo $_SESSION['status_title']; ?>",
-			text: "<?php echo $_SESSION['status']; ?>",
-			icon: "<?php echo $_SESSION['status_code']; ?>",
-			button: false,
-			timer: <?php echo $_SESSION['status_timer']; ?>,
-			});
-		</script>
-		<?php
-		unset($_SESSION['status']);
-	}
-	?>
-</body>
-</html>
+
+	</html>
