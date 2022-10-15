@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Sep 10, 2022 at 07:23 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.0.19
+-- Host: localhost
+-- Generation Time: Oct 15, 2022 at 04:37 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -48,7 +48,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`userId`, `employeeId`, `adminFirst_Name`, `adminMiddle_Name`, `adminLast_Name`, `adminEmail`, `adminPassword`, `adminStatus`, `tokencode`, `adminProfile`, `account_status`, `created_at`, `updated_at`) VALUES
-(1, '724758478978', 'Andrei', 'Manalansan', 'Viscayno', 'andrei.m.viscayno@gmail.com', '169b7c16679df9a7daa4efe1cdd43e55', 'Y', 'd5cbbb984afb41c1adf88a8e19740cc9', 'profile.png', 'active', '2022-07-07 05:19:44', '2022-08-13 05:05:14');
+(1, '724758478978', 'JOSE', 'DATU', 'SANTOS', 'fisheryapp092922@gmail.com', '42f749ade7f9e195bf475f37a44cafcb', 'Y', 'd5cbbb984afb41c1adf88a8e19740cc9', 'green-profile.png', 'active', '2022-07-07 05:19:44', '2022-10-15 01:02:31');
 
 -- --------------------------------------------------------
 
@@ -114,7 +114,7 @@ CREATE TABLE `superadmin` (
 --
 
 INSERT INTO `superadmin` (`superadminId`, `name`, `email`, `password`, `tokencode`, `profile`, `created_at`, `updated_at`) VALUES
-(1, 'Viscayno, Andrei', 'andrei.m.viscayno@gmail.com', 'a2aa56ae8d0a2e574474a0a7bbe30cb5', 'cf3d41ef87dbd96fe6b963af1eb9c0f6', 'profile.png', '2022-07-03 00:09:13', '2022-09-10 04:49:43');
+(1, 'JUAN, DATU', 'fisheryapp092922@gmail.com', '42f749ade7f9e195bf475f37a44cafcb', 'cf3d41ef87dbd96fe6b963af1eb9c0f6', 'green-profile.png', '2022-07-03 00:09:13', '2022-10-15 02:11:36');
 
 -- --------------------------------------------------------
 
@@ -157,7 +157,7 @@ CREATE TABLE `system_logo` (
 --
 
 INSERT INTO `system_logo` (`Id`, `logo`, `created_at`, `updated_at`) VALUES
-(1, 'CCS_Logo_-_New.png', '2022-07-08 08:11:27', '2022-09-10 04:41:38');
+(1, 'fish-favicon.png', '2022-07-08 08:11:27', '2022-10-15 00:44:39');
 
 -- --------------------------------------------------------
 
@@ -202,7 +202,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`userId`, `employeeId`, `userFirst_Name`, `userMiddle_Name`, `userLast_Name`, `userPhone_Number`, `userEmail`, `userPassword`, `userStatus`, `tokencode`, `userProfile`, `uniqueID`, `account_status`, `created_at`, `updated_at`) VALUES
-(197, '20183473', 'ANDREI', 'MANALANSAN', 'VISCAYNO', '9776621929', 'andreishania07012000@gmail.com', '5a30c9609b52fe348fb6925896e061de', 'Y', 'b3c2dc375edf8a69d45bcbeac8f805a5', 'profile.png', '68414511', 'active', '2022-07-05 11:39:33', '2022-09-10 04:39:51');
+(197, '20183473', 'JUAN', 'DATU', 'SANTOS', '9776621929', 'fisheryapp092922@gmail.com', '42f749ade7f9e195bf475f37a44cafcb', 'Y', 'b3c2dc375edf8a69d45bcbeac8f805a5', 'green-profile.png', '68414511', 'active', '2022-07-05 11:39:33', '2022-10-15 01:02:50');
 
 --
 -- Indexes for dumped tables
