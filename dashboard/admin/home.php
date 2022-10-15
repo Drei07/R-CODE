@@ -1,16 +1,19 @@
 <?php
 include_once '../../database/dbconfig2.php';
 require_once 'authentication/admin-class.php';
-include_once '../superadmin/controller/select-settings-configuration-controller.php';
+include_once '../superadmin/controller/select-settings-coniguration-controller.php';
 
 
-$user_home = new ADMIN();
+$admin_home = new ADMIN();
 
-if(!$user_home->is_logged_in())
+if(!$admin_home->is_logged_in())
 {
- $user_home->redirect('../../public/admin/signin');
+ $admin_home->redirect('../../public/admin/signin');
 }
 
+$stmt = $admin_home->runQuery("SELECT * FROM admin WHERE userId=:uid");
+$stmt->execute(array(":uid"=>$_SESSION['adminSession']));
+$row = $stmt->fetch(PDO::FETCH_ASSOC);
 
 ?>
 <!DOCTYPE html>
@@ -21,43 +24,45 @@ if(!$user_home->is_logged_in())
 	<link rel="shortcut icon" href="../../src/img/<?php echo $logo ?>">
 	<link rel="stylesheet" href="../../src/node_modules/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../../src/node_modules/boxicons/css/boxicons.min.css">
-	<link rel="stylesheet" href="../../src/node_modules/aos/dist/aos.css" />
+	<link rel="stylesheet" href="../../src/node_modules/aos/dist/aos.css">
     <link rel="stylesheet" href="../../src/css/admin.css?v=<?php echo time(); ?>">
 	<title>Dashboard</title>
 </head>
 <body>
 
+<!-- Loader -->
+<div class="loader"></div>
 
 	<!-- SIDEBAR -->
-	<section id="sidebar">
-		<a href="#" class="brand"><img src="../../src/img/<?php echo $logo ?>" alt="logo" class="brand-img"></i>&nbsp;&nbsp;SVNHS</a>
+	<section id="sidebar" class="hide">
+		<a href="#" class="brand"><img src="../../src/img/<?php echo $logo ?>" alt="logo" class="brand-img"></i>&nbsp;&nbsp;DHVSU</a>
 		<ul class="side-menu">
 			<li><a href="#" class="active"><i class='bx bxs-dashboard icon' ></i> Dashboard</a></li>
 			<li class="divider" data-text="main">Main</li>
 			<li>
-				<a href="#"><i class='bx bxs-inbox icon' ></i> Elements <i class='bx bx-chevron-right icon-right' ></i></a>
+				<a href="#"><i class='bx bxs-user-pin icon' ></i> Students <i class='bx bx-chevron-right icon-right' ></i></a>
 				<ul class="side-dropdown">
-					<li><a href="#">Alert</a></li>
-					<li><a href="#">Badges</a></li>
-					<li><a href="#">Breadcrumbs</a></li>
-					<li><a href="#">Button</a></li>
+					<li><a href="enrolled-students-data">Data</a></li>
+					<li><a href="add-students">Add Students</a></li>
 				</ul>
 			</li>
-			<li><a href="#"><i class='bx bxs-chart icon' ></i> Charts</a></li>
-			<li><a href="#"><i class='bx bxs-widget icon' ></i> Widgets</a></li>
-			<li class="divider" data-text="table and forms">Table and forms</li>
-			<li><a href="#"><i class='bx bx-table icon' ></i> Tables</a></li>
-			<li>
-				<a href="#"><i class='bx bxs-notepad icon' ></i> Forms <i class='bx bx-chevron-right icon-right' ></i></a>
+            <li>
+				<a href="#"><i class='bx bxs-user icon' ></i> Admin <i class='bx bx-chevron-right icon-right' ></i></a>
 				<ul class="side-dropdown">
-					<li><a href="#">Basic</a></li>
-					<li><a href="#">Select</a></li>
-					<li><a href="#">Checkbox</a></li>
-					<li><a href="#">Radio</a></li>
+					<li><a href="admin-data">Data</a></li>
+					<li><a href="add-admin">Add Admin</a></li>
+				</ul>
+			</li>
+
+			<li class="divider" data-text="room">room</li>
+			<li>
+				<a href="#"><i class='bx bx-current-location icon' ></i>Room<i class='bx bx-chevron-right icon-right' ></i></a>
+				<ul class="side-dropdown">
+					<li><a href="room-list">List</a></li>
+                    <li><a href="add-room">Add Room</a></li>
 				</ul>
 			</li>
 		</ul>
-
 	</section>
 	<!-- SIDEBAR -->
 
@@ -66,28 +71,25 @@ if(!$user_home->is_logged_in())
 		<!-- NAVBAR -->
 		<nav>
 			<i class='bx bx-menu toggle-sidebar' ></i>
-			<form action="#">
-				<div class="form-group">
-					<input type="text" placeholder="Search...">
-					<i class='bx bx-search icon' ></i>
-				</div>
-			</form>
-			<!-- <a href="#" class="nav-link">
+
+			<a href="#" class="nav-link">
 				<i class='bx bxs-bell icon' ></i>
 				<span class="badge">5</span>
 			</a>
 			<a href="#" class="nav-link">
 				<i class='bx bxs-message-square-dots icon' ></i>
 				<span class="badge">8</span>
-			</a> -->
+			</a>
 			<span class="divider"></span>
+			<div class="dropdown">
+				<span><?php echo $row['name']; ?></i></span>
+			</div>	
 			<div class="profile">
 				<img src="../../src/img/<?php echo $profile ?>" alt="">
 				<ul class="profile-link">
 					<li><a href="profile"><i class='bx bxs-user-circle icon' ></i> Profile</a></li>
-					<li><a href="notification"><i class='bx bxs-bell icon' ></i> Notification</a></li><span class="badge">5</span>
 					<li><a href="settings"><i class='bx bxs-cog' ></i> Settings</a></li>
-					<li><a href="authentication/admin-signout.php" class="btn-signout"><i class='bx bxs-log-out-circle' ></i> Signout</a></li>
+					<li><a href="authentication/superadmin-signout" class="btn-signout"><i class='bx bxs-log-out-circle' ></i> Signout</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -96,61 +98,48 @@ if(!$user_home->is_logged_in())
 		<!-- MAIN -->
 		<main>
 			<h1 class="title">Dashboard</h1>
-			<!-- <ul class="breadcrumbs">
-				<li><a href="#">Home</a></li>
-				<li class="divider">/</li>
-				<li><a href="#" class="active">Dashboard</a></li>
-			</ul> -->
-			<div class="info-data">
-				<div class="card">
+			<ul class="breadcrumbs">
+				<li><a href="home" >Home</a></li>
+				<li class="divider">|</li>
+                <li><a href="" class="active">Dashboard</a></li>
+			</ul>
+			<div class="dashboard-data">
+				<div class="dashboard-card">
 					<div class="head">
 						<div>
-							<h2>1500</h2>
-							<p>Traffic</p>
+							<?php
+								$pdoQuery = "SELECT * FROM admin";
+								$pdoResult1 = $pdoConnect->prepare($pdoQuery);
+								$pdoResult1->execute();
+
+								$count = $pdoResult1->rowCount();
+
+								echo
+								"
+									<h2>$count</h2>
+								";
+							?>
+							<p>Admin</p>
 						</div>
-						<i class='bx bx-trending-up icon' ></i>
+						<i class='bx bxs-user icon' ></i>
 					</div>
-					<span class="progress" data-value="40%"></span>
-					<span class="label">40%</span>
+					<span class="progress" data-value="40%"></span>				
 				</div>
-				<div class="card">
+				<div class="dashboard-card">
 					<div class="head">
 						<div>
-							<h2>234</h2>
-							<p>Sales</p>
+
+							<p>Student</p>
 						</div>
-						<i class='bx bx-trending-down icon down' ></i>
-					</div>
-					<span class="progress" data-value="60%"></span>
-					<span class="label">60%</span>
-				</div>
-				<div class="card">
-					<div class="head">
-						<div>
-							<h2>465</h2>
-							<p>Pageviews</p>
-						</div>
-						<i class='bx bx-trending-up icon' ></i>
+						<i class='bx bxs-user-pin icon' ></i>
 					</div>
 					<span class="progress" data-value="30%"></span>
-					<span class="label">30%</span>
-				</div>
-				<div class="card">
-					<div class="head">
-						<div>
-							<h2>235</h2>
-							<p>Visitors</p>
-						</div>
-						<i class='bx bx-trending-up icon' ></i>
-					</div>
-					<span class="progress" data-value="80%"></span>
-					<span class="label">80%</span>
 				</div>
 			</div>
 			<div class="data">
 				<div class="content-data">
 					<div class="head">
-						<h3>Sales Report</h3>
+						<h3>Calendar</h3>
 						<div class="menu">
 							<i class='bx bx-dots-horizontal-rounded icon'></i>
 							<ul class="menu-link">
@@ -226,12 +215,12 @@ if(!$user_home->is_logged_in())
 	</section>
 	<!-- END NAVBAR -->
 
-	<script src="../../src/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="../../src/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="../../src/node_modules/sweetalert/dist/sweetalert.min.js"></script>
 	<script src="../../src/node_modules/jquery/dist/jquery.min.js"></script>
 	<script src="../../src/js/dashboard.js"></script>
-
-
+    <script src="../../src/js/loader.js"></script>
+	
 	<script>
 
 		// Signout
@@ -240,6 +229,7 @@ if(!$user_home->is_logged_in())
 		const href = $(this).attr('href')
 
 				swal({
+				title: "Signout?",
 				text: "Are you sure do you want to signout?",
 				icon: "warning",
 				buttons: true,

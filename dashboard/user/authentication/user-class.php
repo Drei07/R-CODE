@@ -78,7 +78,7 @@ class USER
       DATE_DEFAULT_TIMEZONE_SET('Asia/Manila');
       $activity = "Has successfully signed in";
       $date_now = date("Y-m-d h:i:s A");
-      $user = "User $Uname";
+      $user = "User-$Uname";
   
       $stmt = $this->conn->prepare("INSERT INTO tb_logs (user, email, activity, date) VALUES (:user, :email, :activity, :date)");
       $stmt->execute(array(":user"=>$user,":email"=>$email,":activity"=>$activity,":date"=>$date_now));
