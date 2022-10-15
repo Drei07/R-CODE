@@ -703,9 +703,9 @@ main .data-table .table .page-link{
 }
 
 main .data-table .table .page-item.active .page-link{
-    background-color: var(--dark-blue);
+    background-color: var(--blue);
     color: var(--light);
-    border-color: var(--dark-blue);
+    border-color: var(--blue);
 
 }
 /* END OF TABLES */

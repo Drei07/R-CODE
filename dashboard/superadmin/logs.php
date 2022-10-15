@@ -36,7 +36,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 	<section id="sidebar" class="hide">
 		<a href="#" class="brand"><img src="../../src/img/<?php echo $logo ?>" alt="logo" class="brand-img"></i>&nbsp;&nbsp;FSR</a>
 		<ul class="side-menu">
-			<li><a href="#" class="active"><i class='bx bxs-dashboard icon' ></i> Dashboard</a></li>
+			<li><a href="home"><i class='bx bxs-dashboard icon' ></i> Dashboard</a></li>
 			<li class="divider" data-text="main">Main</li>
 			<li>
 				<a href="#"><i class='bx bxs-user-pin icon' ></i> User <i class='bx bx-chevron-right icon-right' ></i></a>
@@ -52,7 +52,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 			</li>
 
 			<li class="divider" data-text="Audit Trail">Audit Trail</li>
-			<li>
+			<li  class="active">
 				<a href="logs"><i class='bx bxs-notepad icon' ></i>Logs</a>
 			</li>
 
