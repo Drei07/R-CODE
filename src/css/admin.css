@@ -46,6 +46,8 @@ li {
 	text-align: center;
 }
 
+
+
 /* ACTIVE */
 .Y {
 	padding: 4px 10px;
@@ -75,6 +77,17 @@ li {
 
 .V a{
 	color: var(--light);
+}
+
+.primary{
+	padding: 8px 30px;
+	border: none;
+	border-radius: 7px;
+	background-color: var(--blue);
+	color: var(--light);
+	font-weight: 600;
+	font-size: 13px;
+	margin-right: 1.5rem;
 }
 
 

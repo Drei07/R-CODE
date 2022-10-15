@@ -15,6 +15,9 @@ $stmt = $admin_home->runQuery("SELECT * FROM admin WHERE userId=:uid");
 $stmt->execute(array(":uid"=>$_SESSION['adminSession']));
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
+$name = $row['adminLast_Name'].', '.$row['adminFirst_Name'];
+$profile_admin = $row['adminProfile'];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -82,14 +85,14 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 			</a>
 			<span class="divider"></span>
 			<div class="dropdown">
-				<span><?php echo $row['name']; ?></i></span>
+				<span><?php echo $name ?></span>
 			</div>	
 			<div class="profile">
-				<img src="../../src/img/<?php echo $profile ?>" alt="">
+				<img src="../../src/img/<?php echo $profile_admin ?>" alt="">
 				<ul class="profile-link">
 					<li><a href="profile"><i class='bx bxs-user-circle icon' ></i> Profile</a></li>
 					<li><a href="settings"><i class='bx bxs-cog' ></i> Settings</a></li>
-					<li><a href="authentication/superadmin-signout" class="btn-signout"><i class='bx bxs-log-out-circle' ></i> Signout</a></li>
+					<li><a href="authentication/admin-signout" class="btn-signout"><i class='bx bxs-log-out-circle' ></i> Signout</a></li>
 				</ul>
 			</div>
 		</nav>

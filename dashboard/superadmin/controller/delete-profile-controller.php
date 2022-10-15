@@ -11,7 +11,7 @@ if(!$superadmin_home->is_logged_in())
 }
 
 
-    $profile                      = "profile.png";
+    $profile                      = "green-profile.png";
 
     $pdoQuery = 'UPDATE superadmin SET profile=:profile WHERE superadminId=1';;
     $pdoResult = $pdoConnect->prepare($pdoQuery);

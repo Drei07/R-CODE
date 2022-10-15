@@ -143,7 +143,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 						</div>
 
 						<div class="addBtn">
-							<button type="submit" class="btn-primary" name="btn-update" id="btn-update" onclick="return IsEmpty(); sexEmpty();">Update</button>
+							<button type="submit" class="primary" name="btn-update" id="btn-update" onclick="return IsEmpty(); sexEmpty();">Update</button>
 						</div>
 					</form>
                 </div>
@@ -170,7 +170,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 						</div>
 
 						<div class="addBtn" style="padding-top: 2rem;">
-							<button type="submit" class="btn-primary" name="btn-update" id="btn-update" onclick="return IsEmpty(); sexEmpty();">Update</button>
+							<button type="submit" class="primary" name="btn-update" id="btn-update" onclick="return IsEmpty(); sexEmpty();">Update</button>
 						</div>
 					</form>
                 </div>
@@ -205,7 +205,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 						</div>
 
 						<div class="addBtn">
-							<button type="submit" class="btn-primary" name="btn-update" id="btn-update" onclick="return IsEmpty(); sexEmpty();">Update</button>
+							<button type="submit" class="primary" name="btn-update" id="btn-update" onclick="return IsEmpty(); sexEmpty();">Update</button>
 						</div>
 					</form>
                 </div>
@@ -240,7 +240,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 						</div>
 
 						<div class="addBtn">
-							<button type="submit" class="btn-primary" name="btn-update" id="btn-update" onclick="return IsEmpty(); sexEmpty();">Update</button>
+							<button type="submit" class="primary" name="btn-update" id="btn-update" onclick="return IsEmpty(); sexEmpty();">Update</button>
 						</div>
 					</form>
                 </div>
