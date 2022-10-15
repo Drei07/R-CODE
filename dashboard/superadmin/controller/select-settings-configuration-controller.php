@@ -14,6 +14,9 @@ $system_number = $system_config['system_number'];
 $system_email = $system_config['system_email'];
 $system_config_last_update = $system_config['updated_at'];
 
+//URL
+$main_url = "https://localhost/R-CODE";
+
 // Logo Configuration
 
 $pdoQuery = "SELECT * FROM system_logo LIMIT 1";

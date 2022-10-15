@@ -1,5 +1,7 @@
 <?php
 require_once 'user-class.php';
+include_once '../../../dashboard/superadmin/controller/select-settings-configuration-controller.php';
+
 $user = new USER();
 
 if($user->is_logged_in()!="")
@@ -26,7 +28,7 @@ if(isset($_POST['btn-forgot-password']))
        <br /><br />
        Click Following Link To Reset Your Password 
        <br /><br />
-       <a href='https://localhost/R-CODE/dashboard/user/authentication/user-reset-password?id=$id&code=$code'>click here to reset your password</a>
+       <a href='$main_url/dashboard/user/authentication/user-reset-password?id=$id&code=$code'>click here to reset your password</a>
        <br /><br />
        thank you :)
        ";

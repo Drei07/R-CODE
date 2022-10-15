@@ -28,7 +28,7 @@ if(isset($_GET['id']) && isset($_GET['code']))
    $stmt->execute(); 
    
    $msg = "
-        <div class='alert alert-error' style='font-size:20px; font-weight:300; color:#000;'>
+        <div class='alert alert-error' style='font-size:25px; font-weight:300; color:#000;'>
         <strong>Welcome !</strong> Your account is now activated.
         </div>
         <a href='../../public/admin/signin' style='text-decoration:none; display: flex; justify-content: right; font-size: 1.2rem; color:#000; font-weight:600;''>Signin here  <img src='../../src/img/caret-right-fill.svg' style='margin-top: .5rem; margin-left: 5px;' width='15' height='15' alt='Arrow right'></a>";
@@ -36,7 +36,7 @@ if(isset($_GET['id']) && isset($_GET['code']))
   else
   {
    $msg = "
-        <div class='alert alert-error' style='font-size:20px; font-weight:300; color:#000;'>
+        <div class='alert alert-error' style='font-size:25px; font-weight:300; color:#000;'>
         <strong>Hey !</strong>  Your account is all ready activated.
         </div>
         <a href='../../public/admin/signin' style='text-decoration:none; display: flex; justify-content: right; font-size: 1.2rem; color:#000; font-weight:600;'>Signin here  <img src='../../src/img/caret-right-fill.svg' style='margin-top: .5rem; margin-left: 5px;' width='15' height='15' alt='Arrow right'></a>";
@@ -45,7 +45,7 @@ if(isset($_GET['id']) && isset($_GET['code']))
  else
  {
   $msg = "
-        <div class='alert alert-error' style='font-size:20px; font-weight:300; color:#000;'>
+        <div class='alert alert-error' style='font-size:25px; font-weight:300; color:#000;'>
         <strong>Warning !</strong> No account Found.
         </div>";
  } 
