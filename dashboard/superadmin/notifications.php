@@ -36,26 +36,30 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 	<section id="sidebar" class="hide">
 		<a href="#" class="brand"><img src="../../src/img/<?php echo $logo ?>" alt="logo" class="brand-img"></i>&nbsp;&nbsp;FSR</a>
 		<ul class="side-menu">
-			<li><a href="#" class="active"><i class='bx bxs-dashboard icon' ></i> Dashboard</a></li>
+			<li><a href="home"><i class='bx bxs-dashboard icon' ></i> Dashboard</a></li>
 			<li class="divider" data-text="main">Main</li>
 			<li>
-				<a href="#"><i class='bx bxs-user-pin icon' ></i> User <i class='bx bx-chevron-right icon-right' ></i></a>
+				<a href="#"><i class='bx bxs-user-pin icon' ></i> Customer <i class='bx bx-chevron-right icon-right' ></i></a>
 				<ul class="side-dropdown">
-					<li><a href="#">Data</a></li>
+					<li><a href="customer-data">Data</a></li>
 				</ul>
 			</li>
             <li>
 				<a href="#"><i class='bx bxs-user icon' ></i> Admin <i class='bx bx-chevron-right icon-right' ></i></a>
 				<ul class="side-dropdown">
-					<li><a href="#">Data</a></li>
+					<li><a href="admin-data">Data</a></li>
+					<li><a href="add-admin">Add Admin</a></li>
 				</ul>
 			</li>
 
-			<li class="divider" data-text="Audit Trail">Audit Trail</li>
+			<li class="divider" data-text="room">room</li>
 			<li>
-				<a href="logs"><i class='bx bxs-notepad icon' ></i>Logs</a>
+				<a href="#"><i class='bx bx-current-location icon' ></i>Room<i class='bx bx-chevron-right icon-right' ></i></a>
+				<ul class="side-dropdown">
+					<li><a href="room-list">List</a></li>
+                    <li><a href="add-room">Add Room</a></li>
+				</ul>
 			</li>
-
 		</ul>
 	</section>
 	<!-- SIDEBAR -->

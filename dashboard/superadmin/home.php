@@ -40,10 +40,9 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 			<li><a href="#" class="active"><i class='bx bxs-dashboard icon' ></i> Dashboard</a></li>
 			<li class="divider" data-text="main">Main</li>
 			<li>
-				<a href="#"><i class='bx bxs-user-pin icon' ></i> Students <i class='bx bx-chevron-right icon-right' ></i></a>
+				<a href="#"><i class='bx bxs-user-pin icon' ></i> Customer <i class='bx bx-chevron-right icon-right' ></i></a>
 				<ul class="side-dropdown">
-					<li><a href="enrolled-students-data">Data</a></li>
-					<li><a href="add-students">Add Students</a></li>
+					<li><a href="customer-data">Data</a></li>
 				</ul>
 			</li>
             <li>
