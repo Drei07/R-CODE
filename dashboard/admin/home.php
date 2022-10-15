@@ -1,7 +1,7 @@
 <?php
 include_once '../../database/dbconfig2.php';
 require_once 'authentication/admin-class.php';
-include_once '../superadmin/controller/select-settings-coniguration-controller.php';
+include_once '../superadmin/controller/select-settings-configuration-controller.php';
 
 
 $admin_home = new ADMIN();
