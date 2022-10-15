@@ -1,12 +1,20 @@
 <?php
 class Database
 {
-     
+    // Localhost
     private $host = "localhost";
     private $db_name = "sample";
     private $username = "root";
     private $password = "";
     public $conn;
+
+    // Live
+    // private $host = "localhost";
+    // private $db_name = "sample";
+    // private $username = "root";
+    // private $password = "";
+    // public $conn;
+
      
     public function dbConnection()
  {
