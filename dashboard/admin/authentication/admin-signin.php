@@ -17,23 +17,25 @@ if(isset($_POST['btn-signin']))
    $data = file_get_contents($url);
    $row =  json_decode($data, true);
    
-   if($row['success'] == "true"){
+if($row['success'] == "true"){
 
- $email = trim($_POST['email']);
- $upass = trim($_POST['password']);
- 
- if($admin_login->login($email,$upass))
- {
-  
-    $_SESSION['status_title'] = "Hey !";
-    $_SESSION['status'] = "Welcome back! ";
-    $_SESSION['status_code'] = "success";
-    $_SESSION['status_timer'] = 10000;
-   header("Location: ../home");
-    exit;
+   $email = trim($_POST['email']);
+   $upass = trim($_POST['password']);
+   
+   if($admin_login->login($email,$upass))
+   {
+   
+      $_SESSION['status_title'] = "Hey !";
+      $_SESSION['status'] = "Welcome back! ";
+      $_SESSION['status_code'] = "success";
+      $_SESSION['status_timer'] = 10000;
+      header("Location: ../home");
+      exit;
 
- }
-}else{
+   }
+}
+else
+{
    $_SESSION['status_title'] = "Error!";
    $_SESSION['status'] = "Invalid captcha, please try again!";
    $_SESSION['status_code'] = "error";

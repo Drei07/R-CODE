@@ -1,3 +1,4 @@
+
 <?php
 include_once '../../database/dbconfig2.php';
 require_once 'authentication/superadmin-class.php';
@@ -15,6 +16,21 @@ $stmt = $superadmin_home->runQuery("SELECT * FROM superadmin WHERE superadminId=
 $stmt->execute(array(":uid"=>$_SESSION['superadminSession']));
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
+$userId = $_GET["id"];
+
+$pdoQuery = "SELECT * FROM admin WHERE userId = :id";
+$pdoResult = $pdoConnect->prepare($pdoQuery);
+$pdoExec = $pdoResult->execute(array(":id"=>$userId));
+$admin = $pdoResult->fetch(PDO::FETCH_ASSOC);
+
+$admin_id = $admin["userId"];
+$admin_profile = $admin["adminProfile"];
+$admin_Lname = $admin["adminLast_Name"];
+$admin_Fname = $admin["adminFirst_Name"];
+$admin_Mname = $admin["adminMiddle_Name"];
+$admin_Email = $admin["adminEmail"];
+$admin_status = $admin["adminStatus"];
+$admin_last_update = $admin["updated_at"];
 
 ?>
 <!DOCTYPE html>
@@ -27,9 +43,12 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 	<link rel="stylesheet" href="../../src/node_modules/boxicons/css/boxicons.min.css">
 	<link rel="stylesheet" href="../../src/node_modules/aos/dist/aos.css" />
     <link rel="stylesheet" href="../../src/css/admin.css?v=<?php echo time(); ?>">
-	<title>Notifications</title>
+	<title>Admin Profile</title>
 </head>
 <body>
+
+<!-- Loader -->
+<div class="loader"></div>
 
 
 	<!-- SIDEBAR -->
@@ -51,6 +70,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 					<li><a href="add-admin">Add Admin</a></li>
 				</ul>
 			</li>
+
 		</ul>
 	</section>
 	<!-- SIDEBAR -->
@@ -86,53 +106,88 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
 		<!-- MAIN -->
 		<main>
-			<h1 class="title">Notifications</h1>
+			<h1 class="title">Admin Profile</h1>
             <ul class="breadcrumbs">
 				<li><a href="home" >Home</a></li>
 				<li class="divider">|</li>
-                <li><a href="" class="active">Notifications</a></li>
+                <li><a href="admin-data" >Admin Data</a></li>
+                <li class="divider">|</li>
+                <li><a href="" class="active">Profile</a></li>
+
 			</ul>
 
-			<!-- SYSTEM CONFIGURATION -->
+			<!-- PROFILE CONFIGURATION -->
 
-            <section class="data-form">
+            <section class="profile-form">
 				<div class="header"></div>
-				<div class="registration" >
-					<form action="controller/update-system-config.php" method="POST" class="row gx-5 needs-validation" name="form" onsubmit="return validate()"  novalidate style="overflow: hidden;">
-						<div class="row gx-5 needs-validation" style="opacity: 0;">
+				<div class="profile">
+					<div class="profile-img">
+						<img src="../../src/img/<?php echo $admin_profile ?>" alt="logo">
+                        <h5><?php echo $admin_Lname?>, <?php echo $admin_Fname?> <?php echo $admin_Mname?></h5>
+ 
+                        <?php
+                         echo ($admin_status=="N" ? '<button class="N">Pending</button>' :  '<button class="Y">Active</button>')
+                        ?>
+						<button class="delete2"><a href="controller/delete-admin-data-controller.php?Id=<?php echo $admin_id ?>" class="btn-delete">Delete Account</a></button>
 
-						<label class="form-label" style="text-align: left; padding-top: .5rem; padding-bottom: 2rem; font-size: 1rem; font-weight: bold;"><i class='bx bxs-edit'></i> System Configuration <p>Last update: <?php  echo $system_config_last_update  ?></p></label>
+					</div>
+
+					<form action="controller/update-admin-data-controller.php?Id=<?php echo $admin_id ?>" method="POST" class="row gx-5 needs-validation" name="form" onsubmit="return validate()"  novalidate style="overflow: hidden;">
+						<div class="row gx-5 needs-validation">
+
+							<label class="form-label" style="text-align: left; padding-top: .5rem; padding-bottom: 1rem; font-size: 1rem; font-weight: bold;"><i class='bx bxs-edit'></i> Admin Information<p>Last update: <?php  echo $admin_last_update  ?></p></label>
 
 							<div class="col-md-6">
-								<label for="sname" class="form-label">System Name<span> *</span></label>
-								<input type="text" class="form-control" autocapitalize="on" autocomplete="off" name="SName" id="sname" required value="<?php  echo $system_name  ?>">
+								<label for="first_name" class="form-label">First Name<span> *</span></label>
+								<input disabled disabled type="text" class="form-control" autocapitalize="on" maxlength="15" autocomplete="off" name="FName" id="first_name" placeholder="<?php echo $admin_Fname ?>" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)" required>
 								<div class="invalid-feedback">
-								Please provide a System Name.
+								Please provide a First Name.
 								</div>
 							</div>
 
-							<div class="col-md-6" >
-								<label for="phone_number" class="form-label">Default Phone Number<span> *</span></label>
-								<div class="input-group flex-nowrap">
-								<span class="input-group-text" id="addon-wrapping">+63</span>
-								<input type="text" class="form-control numbers"  autocapitalize="off" inputmode="numeric" autocomplete="off" name="PNumber" id="phone_number" minlength="10" maxlength="10" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required value="<?php  echo $system_number  ?>">
+							<div class="col-md-6">
+								<label for="middle_name" class="form-label">Middle Name</label>
+								<input disabled type="text" class="form-control" autocapitalize="on" maxlength="15" autocomplete="off" name="MName" id="middle_name" placeholder="<?php echo $admin_Mname ?>" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)">
+								<div class="invalid-feedback">
+								Please provide a Middle Name.
 								</div>
 							</div>
 
-							<div class="col-md-12">
-								<label for="email" class="form-label">Default Email<span> *</span></label>
-								<input type="email" class="form-control" autocapitalize="off" autocomplete="off" name="Email" id="email" required value="<?php  echo $system_email  ?>">
+							<div class="col-md-6">
+								<label for="last_name" class="form-label">Last Name<span> *</span></label>
+								<input disabled type="text" class="form-control" autocapitalize="on" maxlength="15" autocomplete="off" name="LName" id="last_name" placeholder="<?php echo $admin_Lname ?>" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)" required >
+								<div class="invalid-feedback">
+								Please provide a Last Name.
+								</div>
+							</div>
+
+                            <div class="col-md-6">
+								<label for="email" class="form-label">Email<span> *</span></label>
+								<input disabled type="email" class="form-control" autocapitalize="off" autocomplete="off" name="Email" id="email" required placeholder="<?php echo $admin_Email ?>">
 								<div class="invalid-feedback">
 								Please provide a valid Email.
 								</div>
 							</div>
 
+
+							<div class="col-md-6" style="opacity: 0;">
+								<label for="" class="form-label">Last Name<span> *</span></label>
+								<input disabled type="text" class="form-control" autocapitalize="on" maxlength="15" autocomplete="off" name="" id="" placeholder="<?php echo $admin_Lname ?>" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)" required >
+								<div class="invalid-feedback">
+								Please provide a Last Name.
+								</div>
+							</div>
+
+
 						</div>
 
+						<div class="addBtn">
+                            <button type="button" onclick="location.href='admin-data'" class="back">Back</button>
+						</div>
 					</form>
+
                 </div>
             </section>		
-			
 		</main>
 		<!-- MAIN -->
 	</section>
@@ -143,7 +198,8 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 	<script src="../../src/node_modules/sweetalert/dist/sweetalert.min.js"></script>
 	<script src="../../src/node_modules/jquery/dist/jquery.min.js"></script>
 	<script src="../../src/js/dashboard.js"></script>
-
+    <script src="../../src/js/loader.js"></script>
+	
 	<script>
 		
 
@@ -163,6 +219,26 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 				}, false)
 			})
 		})();
+	
+		//Delete Profile
+
+		$('.btn-delete').on('click', function(e){
+		e.preventDefault();
+		const href = $(this).attr('href')
+
+				swal({
+				title: "Delete?",
+				text: "Are you sure do you want to delete?",
+				icon: "warning",
+				buttons: true,
+				dangerMode: true,
+			})
+			.then((willDelete) => {
+				if (willDelete) {
+				document.location.href = href;
+				}
+			});
+		})
 
 		// Signout
 		$('.btn-signout').on('click', function(e){
@@ -214,4 +290,4 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 	}
 	?>
 </body>
-</html>     
+</html>

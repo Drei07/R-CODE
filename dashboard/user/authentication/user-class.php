@@ -63,8 +63,8 @@ class USER
  {
   try
   {
-   $stmt = $this->conn->prepare("SELECT * FROM user WHERE userEmail=:email_id");
-   $stmt->execute(array(":email_id"=>$email));
+   $stmt = $this->conn->prepare("SELECT * FROM user WHERE userEmail=:email_id AND account_status = :account_status");
+   $stmt->execute(array(":email_id"=>$email , ":account_status" => "active"));
    $userRow=$stmt->fetch(PDO::FETCH_ASSOC);
    $Uname = $userRow['userEmail'];
    
@@ -109,7 +109,7 @@ class USER
    else
    {
     $_SESSION['status_title'] = "Sorry !";
-    $_SESSION['status'] = "Email or Password is incorrect.";
+    $_SESSION['status'] = "No account found or your account has been remove!";
     $_SESSION['status_code'] = "error";
     $_SESSION['status_timer'] = 10000000;
    header("Location: ../../..");

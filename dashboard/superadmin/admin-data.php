@@ -26,7 +26,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 	<link rel="stylesheet" href="../../src/node_modules/boxicons/css/boxicons.min.css">
 	<link rel="stylesheet" href="../../src/node_modules/aos/dist/aos.css">
     <link rel="stylesheet" href="../../src/css/admin.css?v=<?php echo time(); ?>">
-	<title>Dashboard</title>
+	<title>Admin Data</title>
 </head>
 <body>
 
@@ -37,7 +37,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 	<section id="sidebar" class="hide">
 		<a href="#" class="brand"><img src="../../src/img/<?php echo $logo ?>" alt="logo" class="brand-img"></i>&nbsp;&nbsp;FSR</a>
 		<ul class="side-menu">
-			<li><a href="#" class="active"><i class='bx bxs-dashboard icon' ></i> Dashboard</a></li>
+			<li><a href="home"><i class='bx bxs-dashboard icon' ></i> Dashboard</a></li>
 			<li class="divider" data-text="main">Main</li>
 			<li>
 				<a href="#"><i class='bx bxs-user-pin icon' ></i> Customer <i class='bx bx-chevron-right icon-right' ></i></a>
@@ -52,6 +52,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 					<li><a href="add-admin">Add Admin</a></li>
 				</ul>
 			</li>
+
 		</ul>
 	</section>
 	<!-- SIDEBAR -->
@@ -87,86 +88,36 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
 		<!-- MAIN -->
 		<main>
-			<h1 class="title">Dashboard</h1>
-			<ul class="breadcrumbs">
+			<h1 class="title">Admin Information</h1>
+            <ul class="breadcrumbs">
 				<li><a href="home" >Home</a></li>
 				<li class="divider">|</li>
-                <li><a href="" class="active">Dashboard</a></li>
+				<li><a href="" class="active">Admin Data</a></li>
 			</ul>
-			<div class="dashboard-data">
-				<div class="dashboard-card">
-					<div class="head">
-						<div>
-							<?php
-								$pdoQuery = "SELECT * FROM admin";
-								$pdoResult1 = $pdoConnect->prepare($pdoQuery);
-								$pdoResult1->execute();
 
-								$count = $pdoResult1->rowCount();
+            <section class="data-table">
+                <div class="searchBx">
+                    <input type="input" placeholder="search . . . . . ." class="search" name="search_box" id="search_box"><button class="searchBtn"><i class="bx bx-search icon"></i></button>
+                </div>
 
-								echo
-								"
-									<h2>$count</h2>
-								";
-							?>
-							<p>Admin</p>
-						</div>
-						<i class='bx bxs-user icon' ></i>
-					</div>
-					<span class="progress" data-value="40%"></span>				
-				</div>
-				<div class="dashboard-card">
-					<div class="head">
-						<div>
-							<?php
-								$pdoQuery = "SELECT * FROM user";
-								$pdoResult1 = $pdoConnect->prepare($pdoQuery);
-								$pdoResult1->execute();
+                <div class="table">
+                <div id="dynamic_content">
+                </div>
 
-								$count = $pdoResult1->rowCount();
-
-								echo
-								"
-									<h2>$count</h2>
-								";
-							?>
-
-							<p>Customer</p>
-						</div>
-						<i class='bx bxs-user-pin icon' ></i>
-					</div>
-					<span class="progress" data-value="30%"></span>
-				</div>
-			</div>
-			<div class="data">
-				<div class="content-data">
-					<div class="head">
-						<h3>Calendar</h3>
-						<div class="menu">
-							<i class='bx bx-dots-horizontal-rounded icon'></i>
-							<ul class="menu-link">
-								<li><a href="#">Edit</a></li>
-								<li><a href="#">Save</a></li>
-								<li><a href="#">Remove</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="chart">
-						<div id="chart"></div>
-					</div>
-				</div>
-			</div>
+            </section>
 		</main>
 		<!-- MAIN -->
 	</section>
 	<!-- END NAVBAR -->
 
-	<script src="../../src/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="../../src/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="../../src/node_modules/sweetalert/dist/sweetalert.min.js"></script>
 	<script src="../../src/node_modules/jquery/dist/jquery.min.js"></script>
 	<script src="../../src/js/dashboard.js"></script>
     <script src="../../src/js/loader.js"></script>
 	
+
+
 	<script>
 
 		// Signout
@@ -187,6 +138,37 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 				}
 			});
 		})
+
+        //live search---------------------------------------------------------------------------------------//
+        $(document).ready(function(){
+
+        load_data(1);
+
+        function load_data(page, query = '')
+        {
+        $.ajax({
+            url:"data-table/admin-data-table.php",
+            method:"POST",
+            data:{page:page, query:query},
+            success:function(data)
+            {
+            $('#dynamic_content').html(data);
+            }
+        });
+        }
+
+        $(document).on('click', '.page-link', function(){
+        var page = $(this).data('page_number');
+        var query = $('#search_box').val();
+        load_data(page, query);
+        });
+
+        $('#search_box').keyup(function(){
+        var query = $('#search_box').val();
+        load_data(1, query);
+        });
+
+        });
 
 	</script>
 

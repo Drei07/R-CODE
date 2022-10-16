@@ -26,7 +26,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 	<link rel="stylesheet" href="../../src/node_modules/boxicons/css/boxicons.min.css">
 	<link rel="stylesheet" href="../../src/node_modules/aos/dist/aos.css">
     <link rel="stylesheet" href="../../src/css/admin.css?v=<?php echo time(); ?>">
-	<title>Dashboard</title>
+	<title>Add Admin</title>
 </head>
 <body>
 
@@ -51,15 +51,6 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 				<ul class="side-dropdown">
 					<li><a href="admin-data">Data</a></li>
 					<li><a href="add-admin">Add Admin</a></li>
-				</ul>
-			</li>
-
-			<li class="divider" data-text="room">room</li>
-			<li>
-				<a href="#"><i class='bx bx-current-location icon' ></i>Room<i class='bx bx-chevron-right icon-right' ></i></a>
-				<ul class="side-dropdown">
-					<li><a href="room-list">List</a></li>
-                    <li><a href="add-room">Add Room</a></li>
 				</ul>
 			</li>
 		</ul>

@@ -51,15 +51,6 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 					<li><a href="add-admin">Add Admin</a></li>
 				</ul>
 			</li>
-
-			<li class="divider" data-text="room">room</li>
-			<li>
-				<a href="#"><i class='bx bx-current-location icon' ></i>Room<i class='bx bx-chevron-right icon-right' ></i></a>
-				<ul class="side-dropdown">
-					<li><a href="room-list">List</a></li>
-                    <li><a href="add-room">Add Room</a></li>
-				</ul>
-			</li>
 		</ul>
 	</section>
 	<!-- SIDEBAR -->
