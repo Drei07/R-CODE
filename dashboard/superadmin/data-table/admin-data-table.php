@@ -81,7 +81,7 @@ $output = '
   {
     $output .= '
     <tr>
-      <td><img src="../../src/img/'.$row["adminProfile"].'" style="width: 40px;"></td>
+      <td><img src="../../src/img/'.$row["adminProfile"].'" style="width: 50px; height:50px; border-radius:50%;"></td>
       <td>'.$row["adminLast_Name"].',&nbsp;&nbsp;'.$row["adminFirst_Name"].'&nbsp;&nbsp;&nbsp;'.$row["adminMiddle_Name"].'</td>
       <td>'.$row["adminEmail"].'</td>
       <td>'. ($row['adminStatus']=="N" ? '<p class="btn-warning N">Pending</p>' :  '<p class="btn-success Y">Active</p>') . '</td>

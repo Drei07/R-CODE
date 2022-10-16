@@ -83,7 +83,7 @@ $output = '
   {
     $output .= '
     <tr>
-        <td><img src="../../src/img/'.$row["userProfile"].'" style="width: 40px;"></td>
+        <td><img src="../../src/img/'.$row["userProfile"].'" style="width: 50px; height:50px; border-radius:50%;"></td>
         <td>'.$row["uniqueID"].'</td>
       <td>'.$row["userLast_Name"].',&nbsp;&nbsp;'.$row["userFirst_Name"].'&nbsp;&nbsp;&nbsp;'.$row["userMiddle_Name"].'</td>
       <td>'.$row["userEmail"].'</td>

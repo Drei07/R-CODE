@@ -1,28 +1,27 @@
 <?php
-include_once '../../../database/dbconfig2.php';
-require_once '../authentication/user-class.php';
+include_once __DIR__. '/../../../database/dbconfig2.php';
+require_once '../authentication/admin-class.php';
 
 
-$user_home = new USER();
+$admin_home = new ADMIN();
 
-if(!$user_home->is_logged_in())
+if(!$admin_home->is_logged_in())
 {
- $user_home->redirect('');
+ $admin_home->redirect('');
 }
 
-$stmt = $user_home->runQuery("SELECT * FROM user WHERE userId=:uid");
-$stmt->execute(array(":uid"=>$_SESSION['userSession']));
-$row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-
+    $UId                            = $_GET["id"];
     $profile                      = "green-profile.png";
 
-    $pdoQuery = 'UPDATE user SET userProfile=:profile WHERE userId=' . $_GET['userId'];
+
+    $pdoQuery = 'UPDATE admin SET adminProfile=:profile WHERE userId= :userId';
     $pdoResult = $pdoConnect->prepare($pdoQuery);
     $pdoExec = $pdoResult->execute(
     array
     ( 
     ":profile"                =>$profile,
+    ":userId"                =>$UId
     )
     );
 
