@@ -1,5 +1,7 @@
 <?php
 require_once 'user-class.php';
+//URL
+$main_url = "https://fishery-supplier-recommender.shop";
 
 $user = new USER();
 

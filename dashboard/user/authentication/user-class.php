@@ -33,15 +33,15 @@ class USER
   return $stmt;
  }
  
- public function register($employeeId,$first_name,$middle_name,$last_name,$phone_number,$email,$upass,$tokencode,$uniqueID)
+ public function register($type_of_customer,$first_name,$middle_name,$last_name,$phone_number,$email,$upass,$tokencode,$uniqueID)
  {
   try
   {       
    $password = md5($upass);
-   $stmt = $this->conn->prepare("INSERT INTO user(employeeId,userFirst_Name,userMiddle_Name,userLast_Name,userPhone_Number,userEmail,userPassword,tokencode,uniqueID) 
-                                        VALUES(:employeeId,:userFirst_Name,:userMiddle_Name,:userLast_Name,:userPhone_Number,:userEmail,:userPassword,:tokencode,:uniqueID)");
+   $stmt = $this->conn->prepare("INSERT INTO user(type_of_customer,userFirst_Name,userMiddle_Name,userLast_Name,userPhone_Number,userEmail,userPassword,tokencode,uniqueID) 
+                                        VALUES(:type_of_customer,:userFirst_Name,:userMiddle_Name,:userLast_Name,:userPhone_Number,:userEmail,:userPassword,:tokencode,:uniqueID)");
    
-   $stmt->bindparam(":employeeId",$employeeId);
+   $stmt->bindparam(":type_of_customer",$type_of_customer);
    $stmt->bindparam(":userFirst_Name",$first_name);
    $stmt->bindparam(":userMiddle_Name",$middle_name);
    $stmt->bindparam(":userLast_Name",$last_name);

@@ -15,7 +15,7 @@ $system_email = $system_config['system_email'];
 $system_config_last_update = $system_config['updated_at'];
 
 //URL
-$main_url = "https://fishery-supplier-recommender.shop`";
+$main_url = "https://fishery-supplier-recommender.shop";
 
 // Logo Configuration
 

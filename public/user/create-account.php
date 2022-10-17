@@ -32,7 +32,7 @@ include_once '../../dashboard/superadmin/controller/select-settings-configuratio
 					<div class="modal-body">
                         <section class="data-form">
                             <div class="registration">
-                                <form action="dashboard/user/authentication/user-registration.php" method="POST" class="row gx-5 needs-validation" name="form" onsubmit="return validate()"  novalidate style="overflow: hidden;">
+                                <form action="../../dashboard/user/authentication/user-registration.php" method="POST" class="row gx-5 needs-validation" name="form" onsubmit="return validate()"  novalidate style="overflow: hidden;">
                                     <div class="row gx-5 needs-validation">
 
                                     <label class="form-label" style="text-align: left; padding-bottom: 2rem; font-size: 1rem; font-weight: bold;">User Information</label>
@@ -54,86 +54,10 @@ include_once '../../dashboard/superadmin/controller/select-settings-configuratio
                                         </div>
 
                                         <div class="col-md-6">
-                                            <label for="last_name" onkeyup="this.value = this.value.toUpperCase();" class="form-label">Last Name<span> *</span></label>
-                                            <input type="text" class="form-control" autocomplete="off" name="LName" id="last_name" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)" required >
+                                            <label for="last_name" class="form-label">Last Name<span> *</span></label>
+                                            <input type="text" onkeyup="this.value = this.value.toUpperCase();" class="form-control" autocomplete="off" name="LName" id="last_name" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)" required >
                                             <div class="invalid-feedback">
                                             Please provide a Last Name.
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <label for="sex" class="form-label">Sex<span> *</span></label>
-                                            <select class="form-select form-control"  name="Sex"  maxlength="6" autocomplete="off" id="sex" required>
-                                            <option selected disabled value="">Select...</option>
-                                            <option value="MALE">MALE</option>
-                                            <option value="FEMALE ">FEMALE</option>
-                                            </select>
-                                            <div class="invalid-feedback">
-                                                Please select a valid Sex.
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <label for="birthdate" class="form-label">Birth Date<span> *</span></label>
-                                            <input type="date" class="form-control" autocapitalize="off" autocomplete="off" name="BirthDate" id="birthdate" maxlength="10" pattern="^[a-zA-Z0-9]+@gmail\.com$"  required placeholder="Ex: mm/dd/yyyy" onkeyup="getAgeVal(0)" onblur="getAgeVal(0);">
-                                            <div class="invalid-feedback">
-                                            Please provide a Birth Date.
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-6" style="display: none;">
-                                            <label for="age" class="form-label">Age<span style="font-size:9px; color:red;">( auto-generated )</span></label>
-                                            <input type="number" class="form-control" autocapitalize="off" autocomplete="off"  name="Age" id="age" required >
-                                            <div class="invalid-feedback">
-                                            Please provide your Age.
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <label for="CivilStatus" class="form-label">Civil Status<span> *</span></label>
-                                            <select class="form-select form-control"  name="CStatus"  maxlength="6" autocomplete="off" id="CivilStatus" required>
-                                            <option selected disabled value="">Select...</option>
-                                            <option value="SINGLE">SINGLE</option>
-                                            <option value="MARRIED">MARRIED</option>
-                                            <option value="SEPERATED">SEPERATED</option>
-                                            <option value=">WIDOW/WIDOWER">WIDOW/WIDOWER</option>
-                                            <option value="ANULLED">ANULLED</option>
-                                            <option value="SOLO PARENT">SOLO PARENT</option>
-                                            </select>
-                                            <div class="invalid-feedback">
-                                                Please select a valid Civil Status.
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <label for="religion" class="form-label">Religion<span> *</span></label>
-                                            <select class="form-select form-control"  name="Religion"  maxlength="6" autocomplete="off" id="religion" required>
-                                            <option selected disabled value="">Select...</option>
-                                            <option value="ROMAN CATHOLIC">Roman Catholic</option>
-                                            <option value="INC">INC</option>
-                                            <option value="CHRISTIAN">Christian</option>
-                                            <option value="ISLAM">Islam</option>
-                                            <option value="BUDDHISM">Buddhism</option>
-                                            <option value="PROTESTANT">Protestant</option>
-                                            <option value="METHODIST">Methodist</option>
-                                            <option value="ADVENTIST">Adventist</option>
-                                            <option value="INDEPENDENT">independent</option>
-                                            <option value="EVANGELICAL">Evangelical</option>
-                                            <option value="JENOVAH'S-WINESSES">Jehovah's-Witnesses</option>
-                                            <option value="JIL">JIL</option>
-                                            <option value="LUTHERAN">Lutheran</option>
-                                            <option value="ORTHODOX">Orthodox</option>
-                                            <option value="PENTECOSTAL">Pentecostal</option>
-                                            <option value="PRESBYTERIANISM">Presbyterianism</option>
-                                            <option value="LATTER-DAY">Latter-Day</option>
-                                            <option value="UCCP">UCCP</option>
-                                            <option value="KJC">KJC</option>
-                                            <option value="BAPTIST">Baptist</option>
-                                            <option value="ANGELICAN-EPISCOPALIAN">Angelican-Episcopalian</option>
-                                            <option value="OTHERS">Others</option>
-                                            </select>
-                                            <div class="invalid-feedback">
-                                                Please select a valid Religion.
                                             </div>
                                         </div>
 
@@ -144,6 +68,18 @@ include_once '../../dashboard/superadmin/controller/select-settings-configuratio
                                             <input type="text" class="form-control numbers"  autocapitalize="off" inputmode="numeric" autocomplete="off" name="PNumber" id="phone_number" required minlength="10" maxlength="10" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  placeholder="10-digit number">
                                             </div>
                                         </div>
+
+                                        <div class="col-md-6">
+                                            <label for="ToC" class="form-label">Type of Customer<span> *</span></label>
+                                            <select class="form-select form-control"  name="ToC"  maxlength="6" autocomplete="off" id="ToC" required>
+                                            <option selected disabled value="">Select...</option>
+                                            <option value="0">BUYER</option>
+                                            <option value="1 ">SELLER</option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                Please select a type of Customer.
+                                            </div>
+                                        </div>
                                         
                                         <div class="col-md-6">
                                             <label for="email" class="form-label">Email<span> *</span></label>
@@ -152,40 +88,8 @@ include_once '../../dashboard/superadmin/controller/select-settings-configuratio
                                             Please provide a valid Email.
                                             </div>
                                         </div>
-                                        <!-- Residential Address -->
-                                        <label class="form-label" style="text-align: left; padding-top: 2rem; padding-bottom: 2rem; font-size: 1rem; font-weight: bold;">Residential Address</label>
+
                                         
-                                        <div class="col-md-6">
-                                            <label for="province" class="form-label">Province<span> *</span></label>
-                                            <input type="text" onkeyup="this.value = this.value.toUpperCase();" class="form-control"  autocomplete="off" name="Province" id="province" required>
-                                            <div class="invalid-feedback">
-                                                Please select a valid Province.
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <label for="city" class="form-label">City/Municipality<span> *</span></label>
-                                            <input type="text" onkeyup="this.value = this.value.toUpperCase();" class="form-control"  autocomplete="off" name="City" id="city" required>
-                                            <div class="invalid-feedback">
-                                                Please select a valid City.
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <label for="barangay" class="form-label">Barangay<span> *</span></label>
-                                            <input type="text" onkeyup="this.value = this.value.toUpperCase();" class="form-control"  autocomplete="off" name="Barangay" id="barangay" required>
-                                            <div class="invalid-feedback">
-                                                Please select a valid Barangay.
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <label for="street" class="form-label">Street</label>
-                                            <input type="text" onkeyup="this.value = this.value.toUpperCase();" class="form-control"  autocomplete="off" name="Street" id="street" >
-                                            <div class="invalid-feedback">
-                                                Please select a valid Street.
-                                            </div>
-                                        </div>
 
                                     </div>
 
