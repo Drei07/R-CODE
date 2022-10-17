@@ -74,7 +74,7 @@ $user_profile = $row['userProfile'];
 				<span><?php echo $name ?></i></span>
 			</div>	
 			<div class="profile">
-				<img src="../../src/img/<?php echo $user_profile` ?>" alt="">
+				<img src="../../src/img/<?php echo $user_profile ?>" alt="">
 				<ul class="profile-link">
 					<li><a href="profile"><i class='bx bxs-user-circle icon' ></i> Profile</a></li>
 					<li><a href="settings"><i class='bx bxs-cog' ></i> Settings</a></li>
