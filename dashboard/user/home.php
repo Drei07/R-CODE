@@ -16,6 +16,7 @@ $stmt->execute(array(":uid"=>$_SESSION['userSession']));
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
 $name = $row['userLast_Name'].', '.$row['userFirst_Name'];
+$user_profile = $row['userProfile'];
 
 ?>
 <!DOCTYPE html>
@@ -73,7 +74,7 @@ $name = $row['userLast_Name'].', '.$row['userFirst_Name'];
 				<span><?php echo $name ?></i></span>
 			</div>	
 			<div class="profile">
-				<img src="../../src/img/<?php echo $profile ?>" alt="">
+				<img src="../../src/img/<?php echo $user_profile` ?>" alt="">
 				<ul class="profile-link">
 					<li><a href="profile"><i class='bx bxs-user-circle icon' ></i> Profile</a></li>
 					<li><a href="settings"><i class='bx bxs-cog' ></i> Settings</a></li>
