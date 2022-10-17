@@ -2,18 +2,18 @@
 class Database
 {
     // Localhost
-    private $host = "localhost";
-    private $db_name = "fisheryapp";
-    private $username = "root";
-    private $password = "";
-    public $conn;
+    // private $host = "localhost";
+    // private $db_name = "fisheryapp";
+    // private $username = "root";
+    // private $password = "";
+    // public $conn;
 
     // Live
-    // private $host = "localhost";
-    // private $db_name = "u867039073_fisheryapp";
-    // private $username = "u867039073_fisheryapp";
-    // private $password = "Andreishania12";
-    // public $conn;
+    private $host = "localhost";
+    private $db_name = "u867039073_fisheryapp";
+    private $username = "u867039073_fisheryapp";
+    private $password = "Andreishania12";
+    public $conn;
 
      
     public function dbConnection()
