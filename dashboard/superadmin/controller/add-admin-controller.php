@@ -1,6 +1,6 @@
 <?php
 require_once '../../admin/authentication/admin-class.php';
-include_once '../../../dashboard/superadmin/controller/select-settings-configuration-controller.php';
+$main_url = "https://fishery-supplier-recommender.shop";
 
 $reg_admin = new ADMIN();
 
@@ -48,7 +48,7 @@ if(isset($_POST['btn-register'])) {
             Email:<br />$email
             Password:<br />$upass
             <br /><br />
-            <a href='https://localhost/R-CODE/public/admin/verify?id=$id&code=$tokencode'>Click HERE to Verify your Account!</a>
+            <a href='$main_url/public/admin/verify?id=$id&code=$tokencode'>Click HERE to Verify your Account!</a>
             <br /><br />
             Thanks,";
             
