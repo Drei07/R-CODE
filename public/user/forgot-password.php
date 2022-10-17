@@ -21,7 +21,6 @@ include_once '../../dashboard/superadmin/controller/select-settings-configuratio
 	<link rel="stylesheet" type="text/css" href="../../src/css/util.css?v=<?php echo time(); ?>">
 	<link rel="stylesheet" type="text/css" href="../../src/css/main.css?v=<?php echo time(); ?>">
 
-	<script src="https://www.google.com/recaptcha/api.js?render=<?php echo $SiteKEY ?>"></script>
 
     <title>Forgot Password?</title>
 </head>
@@ -37,7 +36,6 @@ include_once '../../dashboard/superadmin/controller/select-settings-configuratio
 
 				<form action="../../dashboard/user/authentication/user-forgot-password.php" method="POST" novalidate="" class="login100-form validate-form">
 
-					<input type="hidden" id="g-token" name="g-token">
 
 					<div class="wrap-input100 validate-input m-b-26" data-validate="Email is required">
 						<span class="label-input100">Email</span>
@@ -72,21 +70,11 @@ include_once '../../dashboard/superadmin/controller/select-settings-configuratio
 	<script src="../../src/vendor/daterangepicker/moment.min.js"></script>
 	<script src="../../src/vendor/daterangepicker/daterangepicker.js"></script>
 	<script src="../../src/vendor/countdowntime/countdowntime.js"></script>
-	<script src="../../src/js/main.js"></script>
+
 	<script src="../../src/node_modules/sweetalert/dist/sweetalert.min.js"></script>
 	<script src="../../src/node_modules/jquery/dist/jquery.min.js"></script>
 
 
-	<script>
-
-		// CAPTCHA
-		grecaptcha.ready(function() {
-		grecaptcha.execute('<?php echo $SiteKEY ?>', {action: 'submit'}).then(function(token) {
-			document.getElementById("g-token").value = token;
-		});
-		});
-
-	</script>
 
 <!-- SWEET ALERT -->
 <?php

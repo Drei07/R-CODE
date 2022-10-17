@@ -55,6 +55,12 @@ include_once 'dashboard/superadmin/controller/select-settings-configuration-cont
 					<div class="flex-sb-m w-full p-b-30">
 
 						<div>
+							<a href="public/user/create-account" class="txt1">
+								Create Account?
+							</a>
+						</div>
+
+						<div>
 							<a href="public/user/forgot-password" class="txt1">
 								Forgot Password?
 							</a>

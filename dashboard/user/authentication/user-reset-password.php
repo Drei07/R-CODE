@@ -49,51 +49,67 @@ if(isset($_GET['id']) && isset($_GET['code']))
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../../src/css/login.css?v=<?php echo time(); ?>">
-    <title>Reset Password</title>
-</head>
-<body class="my-login-page">
-	<section class="h-100">
-		<div class="container h-100">
-			<div class="row justify-content-md-center align-items-center h-100">
-				<div class="card-wrapper">
-					<div class="card fat">
-						<div class="card-body">
-							<h4 class="card-title">Reset Password</h4>
-                            <a href="../../../" class="close"><img src="../../../src/img/caret-right-fill.svg" alt="close-btn" width="24" height="24"></a>
-                            <form action="" method="POST" class="my-login-validation" novalidate="">
-								<div class="form-group">
-									<label for="new-password">New Password</label>
-									<input id="new-password" type="password" class="form-control" name="new-password" autocapitalize="on" autocorrect="off" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Enter your password" required autofocus data-eye>
-									<div class="invalid-feedback">
-										Password is required
-									</div>
-									<div class="form-text text-muted">
-										Make sure your password is contain capital letter and number with a minumum of 8 words.
-									</div>
-								</div>
+	<link rel="shortcut icon" href="../../../src/img/<?php echo $logo ?>">
+	<link rel="stylesheet" type="text/css" href="../../../src/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../../src/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="../../../src/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+	<link rel="stylesheet" type="text/css" href="../../../src/vendor/animate/animate.css">	
+	<link rel="stylesheet" type="text/css" href="../../../src/vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="../../../src/vendor/animsition/css/animsition.min.css">
+	<link rel="stylesheet" type="text/css" href="../../../src/vendor/select2/select2.min.css">	
+	<link rel="stylesheet" type="text/css" href="../../../src/vendor/daterangepicker/daterangepicker.css">
+	<link rel="stylesheet" type="text/css" href="../../../src/css/util.css?v=<?php echo time(); ?>">
+	<link rel="stylesheet" type="text/css" href="../../../src/css/main.css?v=<?php echo time(); ?>">
 
-								<div class="form-group m-0">
-									<button type="submit" name="btn-update-password" class="btn btn-primary btn-block">
-										Reset Password
-									</button>
-								</div>
-							</form>
-						</div>
-					</div>
+    <title>Customer | Reset Password</title>
+</head>
+<body>
+
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-form-title" style="background-image: url(../../../src/img/fish.jpg);">
+					<span class="login100-form-title-1">
+						Reset Password?
+					</span>
 				</div>
+
+				<form action="" method="POST" novalidate="" class="login100-form validate-form">
+
+					<div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
+						<span class="label-input100">Password</span>
+						<input class="input100" type="password" name="new-password" id="new-password" placeholder="Enter new password">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="flex-sb-m w-full p-b-30">
+
+					</div>
+
+					<div class="container-login100-form-btn">
+						<button type="submit" name="btn-update-password" id="submit" class="login100-form-btn">
+						Reset Password
+						</button>
+					</div>
+				</form>
 			</div>
 		</div>
-	</section>
+	</div>
 
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-	<script src="../../../src/js/SigninForm.js"></script>
+	<script src="../../../src/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="../../../src/vendor/animsition/js/animsition.min.js"></script>
+	<script src="../../../src/vendor/bootstrap/js/popper.js"></script>
+	<script src="../../../src/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="../../../src/vendor/select2/select2.min.js"></script>
+	<script src="../../../src/vendor/daterangepicker/moment.min.js"></script>
+	<script src="../../../src/vendor/daterangepicker/daterangepicker.js"></script>
+	<script src="../../../src/vendor/countdowntime/countdowntime.js"></script>
+	<script src="../../../src/js/main.js"></script>
+	<script src="../../../src/node_modules/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="../../../src/node_modules/jquery/dist/jquery.min.js"></script>
 
 	<script>
 

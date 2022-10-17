@@ -1,7 +1,5 @@
 <?php
 require_once 'admin-class.php';
-include_once '../../../dashboard/superadmin/controller/select-settings-configuration-controller.php';
-
 $admin = new ADMIN();
 
 if($admin->is_logged_in()!="")

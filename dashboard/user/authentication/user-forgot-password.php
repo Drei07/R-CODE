@@ -1,6 +1,5 @@
 <?php
 require_once 'user-class.php';
-include_once '../../../dashboard/superadmin/controller/select-settings-configuration-controller.php';
 
 $user = new USER();
 

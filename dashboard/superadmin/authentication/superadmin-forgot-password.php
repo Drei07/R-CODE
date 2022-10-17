@@ -1,6 +1,5 @@
 <?php
 require_once 'superadmin-class.php';
-include_once '../../../dashboard/superadmin/controller/select-settings-configuration-controller.php';
 
 $superadmin = new SUPERADMIN();
 

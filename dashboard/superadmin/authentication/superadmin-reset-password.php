@@ -50,7 +50,8 @@ if(isset($_GET['id']) && isset($_GET['code']))
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" href="../../../src/img/<?php echo $logo ?>">
@@ -64,18 +65,17 @@ if(isset($_GET['id']) && isset($_GET['code']))
 	<link rel="stylesheet" type="text/css" href="../../../src/vendor/daterangepicker/daterangepicker.css">
 	<link rel="stylesheet" type="text/css" href="../../../src/css/util.css?v=<?php echo time(); ?>">
 	<link rel="stylesheet" type="text/css" href="../../../src/css/main.css?v=<?php echo time(); ?>">
+
     <title>Superadmin | Reset Password</title>
 </head>
-
-<style>
-</style>
 <body>
+
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<div class="login100-form-title" style="background-image: url(../../../src/img/fish.jpg);">
 					<span class="login100-form-title-1">
-						Reset Password
+						Reset Password?
 					</span>
 				</div>
 
@@ -83,20 +83,17 @@ if(isset($_GET['id']) && isset($_GET['code']))
 
 					<div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
 						<span class="label-input100">Password</span>
-						<input class="input100" type="password" name="new-password" placeholder="Enter new password">
+						<input class="input100" type="password" name="new-password" id="new-password" placeholder="Enter new password">
 						<span class="focus-input100"></span>
 					</div>
 
 					<div class="flex-sb-m w-full p-b-30">
 
-						<div>
-
-						</div>
 					</div>
 
 					<div class="container-login100-form-btn">
 						<button type="submit" name="btn-update-password" id="submit" class="login100-form-btn">
-							Reset Password
+						Reset Password
 						</button>
 					</div>
 				</form>
