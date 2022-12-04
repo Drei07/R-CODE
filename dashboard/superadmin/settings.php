@@ -51,6 +51,9 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 					<li><a href="add-admin">Add Admin</a></li>
 				</ul>
 			</li>
+			<li class="divider" data-text="Others">Others</li>
+			<li><a href="audit-trail"><i class='bx bxs-book icon' ></i> Audit Trail</a></li>
+k
 		</ul>
 	</section>
 	<!-- SIDEBAR -->
@@ -61,14 +64,6 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 		<nav>
 			<i class='bx bx-menu toggle-sidebar' ></i>
 
-			<a href="#" class="nav-link">
-				<i class='bx bxs-bell icon' ></i>
-				<span class="badge">5</span>
-			</a>
-			<a href="#" class="nav-link">
-				<i class='bx bxs-message-square-dots icon' ></i>
-				<span class="badge">8</span>
-			</a>
 			<span class="divider"></span>
 			<div class="dropdown">
 				<span><?php echo $row['name']; ?></i></span>
@@ -230,6 +225,33 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 							<div class="invalid-feedback">
 							Please provide a Site Secret Key.
 							</div>
+						</div>
+
+						</div>
+
+						<div class="addBtn">
+							<button type="submit" class="primary" name="btn-update" id="btn-update" onclick="return IsEmpty(); sexEmpty();">Update</button>
+						</div>
+					</form>
+                </div>
+            </section>
+
+			<!-- Google Maps API  -->
+
+			<section class="data-form">
+				<div class="header"></div>
+				<div class="registration">
+					<form action="controller/update-google-maps-controller.php" method="POST" class="row gx-5 needs-validation" name="form" onsubmit="return validate()"  novalidate style="overflow: hidden;">
+						<div class="row gx-5 needs-validation">
+
+						<label class="form-label" style="text-align: left; padding-top: .5rem; padding-bottom: 2rem; font-size: 1rem; font-weight: bold;"><i class='bx bxs-edit'></i> Google Maps API Configuration <p>Last update: <?php  echo $google_maps_api_last_update  ?></p></label>
+
+						<div class="col-md-12">
+								<label for="APIKey" class="form-label">API Key<span> *</span></label>
+								<input type="text" class="form-control" autocapitalize="on" autocomplete="off" name="APIKey" id="APIKey" required placeholder ="<?php  echo $API_key  ?>">
+								<div class="invalid-feedback">
+								Please provide a API Key.
+								</div>
 						</div>
 
 						</div>

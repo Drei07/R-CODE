@@ -49,6 +49,16 @@ $SKey =  $google['site_key'];
 $SSKey =  $google['site_secret_key'];
 $google_recaptcha_api_last_update =  $google['updated_at'];
 
+// Google reCAPTCHA V3 API
+
+$pdoQuery = "SELECT * FROM google_maps LIMIT 1";
+$pdoResult = $pdoConnect->prepare($pdoQuery);
+$pdoExec = $pdoResult->execute(array());
+$google_maps = $pdoResult->fetch(PDO::FETCH_ASSOC);
+
+$API_key =  $google_maps['API_key'];
+$google_maps_api_last_update =  $google_maps['updated_at'];
+
 // Superadmin Profile
 
 $pdoQuery = "SELECT * FROM superadmin LIMIT 1";

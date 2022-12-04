@@ -2,13 +2,14 @@
 require_once 'user-class.php';
 //URL
 $main_url = "https://fishery-supplier-recommender.shop";
+include_once __DIR__.'/../../superadmin/controller/select-settings-configuration-controller.php';
+
 
 $reg_user = new USER();
 
 
 if(isset($_POST['btn-register'])) {
 
-    $type_of_customer               = trim($_POST['ToC']);
     $first_name                     = trim($_POST['FName']);
     $middle_name                    = trim($_POST['MName']);
     $last_name                      = trim($_POST['LName']);
@@ -23,9 +24,6 @@ if(isset($_POST['btn-register'])) {
 
     // Token Generator
     $tokencode      = md5(uniqid(rand()));
-
-    //uniqueID
-    $uniqueID            = str_pad(mt_rand(1,99999999),8,'0',STR_PAD_LEFT);
 
     $stmt = $reg_user->runQuery("SELECT * FROM user WHERE userEmail=:email_id");
     $stmt->execute(array(":email_id"=>$email));
@@ -42,7 +40,7 @@ if(isset($_POST['btn-register'])) {
     }
     else
     {
-        if($reg_user->register($type_of_customer,$first_name,$middle_name,$last_name,$phone_number,$email,$upass,$tokencode,$uniqueID))
+        if($reg_user->register($first_name,$middle_name,$last_name,$phone_number,$email,$upass,$tokencode))
         {   
         $id = $reg_user->lasdID();  
         $key = base64_encode($id);
@@ -51,7 +49,7 @@ if(isset($_POST['btn-register'])) {
         $message = "     
             Hello sir/maam $last_name,
             <br /><br />
-            Welcome to Fishery Supplier Recommender!
+            Welcome to $system_name!
             <br /><br />
             Email:<br />$email
             Password:<br />$upass

@@ -68,20 +68,8 @@ include_once '../../dashboard/superadmin/controller/select-settings-configuratio
                                             <input type="text" class="form-control numbers"  autocapitalize="off" inputmode="numeric" autocomplete="off" name="PNumber" id="phone_number" required minlength="10" maxlength="10" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  placeholder="10-digit number">
                                             </div>
                                         </div>
-
-                                        <div class="col-md-6">
-                                            <label for="ToC" class="form-label">Type of Customer<span> *</span></label>
-                                            <select class="form-select form-control"  name="ToC"  maxlength="6" autocomplete="off" id="ToC" required>
-                                            <option selected disabled value="">Select...</option>
-                                            <option value="0">BUYER</option>
-                                            <option value="1 ">SELLER</option>
-                                            </select>
-                                            <div class="invalid-feedback">
-                                                Please select a type of Customer.
-                                            </div>
-                                        </div>
                                         
-                                        <div class="col-md-6">
+                                        <div class="col-md-12">
                                             <label for="email" class="form-label">Email<span> *</span></label>
                                             <input type="email" class="form-control" autocapitalize="off" autocomplete="off" name="Email" id="email" required placeholder="Ex. juan@email.com">
                                             <div class="invalid-feedback">
@@ -135,14 +123,6 @@ include_once '../../dashboard/superadmin/controller/select-settings-configuratio
 				}, false)
 			})
 		})();
-
-        // Country Selector
-        $("#nationality").countrySelect({
-            defaultCountry:"ph",
-            defaultStyling:"inside",
-            responsiveDropdown:true
-        });
-
 
 		// Signout
 		$('.btn-signout').on('click', function(e){

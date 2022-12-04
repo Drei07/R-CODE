@@ -12,7 +12,7 @@
 	--dark-grey: #8D8D8D;
 	--light: #fff;
 	--dark: #000;
-	--green: #81D43A;
+	--green: #61b11b;
 	--light-green: #E3FFCB;
 	--blue: #57b846;
 	--light-blue: #D0E4FF;
@@ -46,7 +46,57 @@ li {
 	text-align: center;
 }
 
+#map-canvas {
+    border-radius: 10px;
+    margin-bottom: 1rem;
+	height: 380px;
+	
 
+}
+
+#map{
+	height: 100%;
+  }
+
+  .calendar{
+	padding: 1rem;
+	border-radius: 10px;
+  }
+  .calendar .btn-primary{
+	background-color: var(--blue);
+	border: 1px solid #FFF;
+	border-radius: 10px;
+  }
+
+  .bg-light{
+	background-color: #FFF;
+  }
+  
+.no-data h3{
+	font-size: 1.2rem;
+	color: rgb(116, 113, 113);
+	text-align: center;
+	padding: 4rem 0rem;
+}
+
+.button-cancel {
+	background-color: #fff;
+	border: 2px solid var(--blue);
+	padding: 0rem 2rem;
+	margin-right: 1rem;
+	text-align: center;
+	justify-content: center;
+	display: flex;
+	align-items: center;
+	border-radius: 10px;
+	color: var(--blue);
+}
+
+.button-cancel:hover{
+	background-color: rgb(239, 238, 238);
+	color: var(--blue);
+
+}
 
 /* ACTIVE */
 .Y {
@@ -547,6 +597,7 @@ main .dashboard-data .dashboard-card {
 	border-radius: 10px;
 	background: var(--light);
 	box-shadow: 4px 4px 16px rgba(0, 0, 0, .05);
+	cursor: pointer;
 }
 main .dashboard-card .head {
 	display: flex;
@@ -561,6 +612,50 @@ main .dashboard-card .head p {
 	font-size: 14px;
 }
 main .dashboard-card .head .icon {
+	font-size: 40px;
+	color: var(--blue);
+}
+
+main .dashboard-data-products {
+	margin-top: 36px;
+	display: grid;
+	align-items: center;
+	justify-content: center;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 200px));
+	grid-gap: 20px;
+}
+
+main .dashboard-data-products .dashboard-card-products{
+	border-radius: 10px;
+	background: var(--light);
+	box-shadow: 4px 4px 16px rgba(0, 0, 0, .05);
+	cursor: pointer;
+}
+
+main .dashboard-card-products .list img{
+	width: 100%;
+	height: 200px;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+}
+main .dashboard-card-products .list h1 {
+	padding: 0rem 1rem;
+	padding-top: .5rem;
+	font-size: 30px;
+	font-weight: 600;
+}
+main .dashboard-card-products .list p {
+	padding: 0rem 1rem;
+	font-size: 14px;
+}
+
+main .dashboard-card-products .list label{
+	color: var(--green);
+	padding:  1rem;
+	font-size: 14px;
+	font-weight: bold;
+}
+main .dashboard-card-products .list .icon {
 	font-size: 40px;
 	color: var(--blue);
 }
@@ -717,6 +812,7 @@ main .data-form {
 	background-color: var(--light);
 	border-radius: 10px;
 	margin-top: 1.5rem;
+	height: 100%;
 	box-shadow: 4px 4px 16px rgba(0, 0, 0, .1);
 }
 
@@ -754,6 +850,14 @@ main .data-form .row .col-md-6 input {
 	font-size: 13px;
 }
 
+main .data-form .row .col-md-12 {
+	padding-bottom: .9rem;
+}
+
+main .data-form .row .col-md-12 input {
+	font-size: 13px;
+}
+
 main .data-form .row label span {
 	color: red;
 	font-size: 13px;
@@ -769,6 +873,13 @@ main .data-form .row label P {
 } 
 
 main .data-form .row .col-md-6 .input-group-text{
+    font-weight: 600; 
+    color: var(--light);
+	background-color: var(--blue);
+	font-size: 13px;
+}
+
+main .data-form .row .col-md-12 .input-group-text{
     font-weight: 600; 
     color: var(--light);
 	background-color: var(--blue);
@@ -1162,7 +1273,7 @@ main .manage button{
   
   .class-modal .modal-content .modal-body {
 	padding: 1rem;
-	margin: 2rem;
+	margin: 0rem 3rem;
   }
   
   .class-modal .modal-content .modal-body .row>* {

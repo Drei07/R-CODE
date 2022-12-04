@@ -52,6 +52,10 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 					<li><a href="add-admin">Add Admin</a></li>
 				</ul>
 			</li>
+			<li class="divider" data-text="Others">Others</li>
+			<li><a href="audit-trail"><i class='bx bxs-book icon' ></i> Audit Trail</a></li>
+
+
 		</ul>
 	</section>
 	<!-- SIDEBAR -->
@@ -62,14 +66,6 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 		<nav>
 			<i class='bx bx-menu toggle-sidebar' ></i>
 
-			<a href="#" class="nav-link">
-				<i class='bx bxs-bell icon' ></i>
-				<span class="badge">5</span>
-			</a>
-			<a href="#" class="nav-link">
-				<i class='bx bxs-message-square-dots icon' ></i>
-				<span class="badge">8</span>
-			</a>
 			<span class="divider"></span>
 			<div class="dropdown">
 				<span><?php echo $row['name']; ?></i></span>
@@ -93,7 +89,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 				<li class="divider">|</li>
                 <li><a href="" class="active">Dashboard</a></li>
 			</ul>
-			<div class="dashboard-data">
+			<div class="dashboard-data" onclick="location.href='admin-data'">
 				<div class="dashboard-card">
 					<div class="head">
 						<div>
@@ -115,7 +111,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 					</div>
 					<span class="progress" data-value="40%"></span>				
 				</div>
-				<div class="dashboard-card">
+				<div class="dashboard-card" onclick="location.href='customer-data'">
 					<div class="head">
 						<div>
 							<?php
@@ -136,24 +132,6 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 						<i class='bx bxs-user-pin icon' ></i>
 					</div>
 					<span class="progress" data-value="30%"></span>
-				</div>
-			</div>
-			<div class="data">
-				<div class="content-data">
-					<div class="head">
-						<h3>Calendar</h3>
-						<div class="menu">
-							<i class='bx bx-dots-horizontal-rounded icon'></i>
-							<ul class="menu-link">
-								<li><a href="#">Edit</a></li>
-								<li><a href="#">Save</a></li>
-								<li><a href="#">Remove</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="chart">
-						<div id="chart"></div>
-					</div>
 				</div>
 			</div>
 		</main>

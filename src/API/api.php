@@ -12,5 +12,13 @@ $google = $pdoResult->fetch(PDO::FETCH_ASSOC);
 $SiteKEY =  $google['site_key'];
 $SiteSECRETKEY =  $google['site_secret_key'];
 
+//google maps API
+$pdoQuery = "SELECT * FROM google_maps LIMIT 1";
+$pdoResult2 = $pdoConnect->prepare($pdoQuery);
+$pdoExec = $pdoResult2->execute(array());
+$google_maps = $pdoResult2->fetch(PDO::FETCH_ASSOC);
+
+$GoogleAPI = $google_maps['API_key'];
+
 
 ?>

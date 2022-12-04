@@ -70,6 +70,9 @@ $user_last_update = $user["updated_at"];
 					<li><a href="add-admin">Add Admin</a></li>
 				</ul>
 			</li>
+			<li class="divider" data-text="Others">Others</li>
+			<li><a href="audit-trail"><i class='bx bxs-book icon' ></i> Audit Trail</a></li>
+
 
 		</ul>
 	</section>
@@ -81,14 +84,6 @@ $user_last_update = $user["updated_at"];
 		<nav>
 			<i class='bx bx-menu toggle-sidebar' ></i>
 
-			<a href="#" class="nav-link">
-				<i class='bx bxs-bell icon' ></i>
-				<span class="badge">5</span>
-			</a>
-			<a href="#" class="nav-link">
-				<i class='bx bxs-message-square-dots icon' ></i>
-				<span class="badge">8</span>
-			</a>
 			<span class="divider"></span>
 			<div class="dropdown">
 				<span><?php echo $row['name']; ?></i></span>
@@ -182,7 +177,7 @@ $user_last_update = $user["updated_at"];
 						</div>
 
 						<div class="addBtn">
-                            <button type="button" onclick="location.href='admin-data'" class="back">Back</button>
+                            <button type="button" onclick="location.href='customer-data'" class="back">Back</button>
 						</div>
 					</form>
 

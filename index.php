@@ -89,6 +89,7 @@ include_once 'dashboard/superadmin/controller/select-settings-configuration-cont
 	<script src="src/node_modules/sweetalert/dist/sweetalert.min.js"></script>
 	<script src="src/node_modules/jquery/dist/jquery.min.js"></script>
 	
+	
 
 
 	<script>

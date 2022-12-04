@@ -33,15 +33,14 @@ class USER
   return $stmt;
  }
  
- public function register($type_of_customer,$first_name,$middle_name,$last_name,$phone_number,$email,$upass,$tokencode,$uniqueID)
+ public function register($first_name,$middle_name,$last_name,$phone_number,$email,$upass,$tokencode)
  {
   try
   {       
    $password = md5($upass);
-   $stmt = $this->conn->prepare("INSERT INTO user(type_of_customer,userFirst_Name,userMiddle_Name,userLast_Name,userPhone_Number,userEmail,userPassword,tokencode,uniqueID) 
-                                        VALUES(:type_of_customer,:userFirst_Name,:userMiddle_Name,:userLast_Name,:userPhone_Number,:userEmail,:userPassword,:tokencode,:uniqueID)");
+   $stmt = $this->conn->prepare("INSERT INTO user(userFirst_Name,userMiddle_Name,userLast_Name,userPhone_Number,userEmail,userPassword,tokencode) 
+                                        VALUES(:userFirst_Name,:userMiddle_Name,:userLast_Name,:userPhone_Number,:userEmail,:userPassword,:tokencode)");
    
-   $stmt->bindparam(":type_of_customer",$type_of_customer);
    $stmt->bindparam(":userFirst_Name",$first_name);
    $stmt->bindparam(":userMiddle_Name",$middle_name);
    $stmt->bindparam(":userLast_Name",$last_name);
@@ -49,7 +48,6 @@ class USER
    $stmt->bindparam(":userEmail",$email);
    $stmt->bindparam(":userPassword",$password);
    $stmt->bindparam(":tokencode",$tokencode);
-   $stmt->bindparam(":uniqueID",$uniqueID);
    $stmt->execute(); 
    return $stmt;
   }
@@ -78,7 +76,7 @@ class USER
       DATE_DEFAULT_TIMEZONE_SET('Asia/Manila');
       $activity = "Has successfully signed in";
       $date_now = date("Y-m-d h:i:s A");
-      $user = "User-$Uname";
+      $user = "User";
   
       $stmt = $this->conn->prepare("INSERT INTO tb_logs (user, email, activity, date) VALUES (:user, :email, :activity, :date)");
       $stmt->execute(array(":user"=>$user,":email"=>$email,":activity"=>$activity,":date"=>$date_now));
