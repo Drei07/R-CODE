@@ -131,7 +131,7 @@ foreach ($pdoResult2->fetchAll(PDO::FETCH_ASSOC) as $schedue_row) {
 			<ul class="breadcrumbs">
 				<li><a href="home">Home</a></li>
 				<li class="divider">|</li>
-				<li><a href="products">Products</a></li>
+				<li><a href="seller-data?Id=<?php echo $product_id ?>">Products</a></li>
 				<li class="divider">|</li>
 				<li><a href="" class="active">Products Details</a></li>
 			</ul>
