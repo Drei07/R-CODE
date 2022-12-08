@@ -17,7 +17,7 @@ include_once 'dashboard/superadmin/controller/select-settings-configuration-cont
   <link rel="stylesheet" href="src/node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link href="src/css/bootstrap.min.css" rel="stylesheet">
   <link href="src/css/font-awesome.min.css?v=<?php echo time(); ?>" rel="stylesheet">
-  <link href="src/css/main.css?v=<?php echo time(); ?>" rel="stylesheet">
+  <link href="src/css/main2.css?v=<?php echo time(); ?>" rel="stylesheet">
 </head>
 
 <body>
