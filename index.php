@@ -1,126 +1,235 @@
 <?php
-include_once __DIR__. '/src/API/api.php';
-include_once 'dashboard/user/authentication/user-signin.php';
+include_once __DIR__ . '/src/API/api.php';
+include_once 'user/authentication/user-signin.php';
 include_once 'dashboard/superadmin/controller/select-settings-configuration-controller.php';
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" href="src/img/<?php echo $logo ?>">
-	<link rel="stylesheet" type="text/css" href="src/vendor/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="src/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="src/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
-	<link rel="stylesheet" type="text/css" href="src/vendor/animate/animate.css">	
-	<link rel="stylesheet" type="text/css" href="src/vendor/css-hamburgers/hamburgers.min.css">
-	<link rel="stylesheet" type="text/css" href="src/vendor/animsition/css/animsition.min.css">
-	<link rel="stylesheet" type="text/css" href="src/vendor/select2/select2.min.css">	
-	<link rel="stylesheet" type="text/css" href="src/vendor/daterangepicker/daterangepicker.css">
-	<link rel="stylesheet" type="text/css" href="src/css/util.css?v=<?php echo time(); ?>">
-	<link rel="stylesheet" type="text/css" href="src/css/main.css?v=<?php echo time(); ?>">
-
-	<script src="https://www.google.com/recaptcha/api.js?render=<?php echo $SiteKEY ?>"></script>
-
-    <title>Sign In</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FISHBOOK</title>
+  <link rel="shortcut icon" href="src/img/<?php echo $logo ?>">
+  <link rel="stylesheet" type="text/css" href="src/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="src/node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link href="src/css/bootstrap.min.css" rel="stylesheet">
+  <link href="src/css/font-awesome.min.css?v=<?php echo time(); ?>" rel="stylesheet">
+  <link href="src/css/main.css?v=<?php echo time(); ?>" rel="stylesheet">
 </head>
+
 <body>
-	<div class="limiter">
-		<div class="container-login100">
-			<div class="wrap-login100">
-				<div class="login100-form-title" style="background-image: url(src/img/fish.jpg);">
-					<span class="login100-form-title-1">
-						Sign In
-					</span>
-				</div>
+  <!--main-->
+  <section class="main">
+    <div class="overlay" style="	background: url(src/img/fisherman.jpeg) center center no-repeat fixed; background-size: cover;"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-sm-6">
+          <!--logo-->
+          <div class="logo"><img src="src/img/<?php echo $logo ?>" width="50px" alt="logo">&nbsp;&nbsp;&nbsp;FISHBOOK</div>
+          <!--logo end-->
+        </div>
+        <div class="col-md-6 col-sm-6">
 
-				<form action="dashboard/user/authentication/user-signin" method="POST" novalidate="" class="login100-form validate-form">
+          <!--social-->
+          <div class="social text-center">
+            <ul>
+              <li><a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="https://plus.google.com/" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+            </ul>
+          </div>
+          <!--social end-->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <!--welcome-message-->
+          <header class="welcome-message text-center">
+            <h1><span class="rotate">We Are Launching Soon , FISHBOOK , ONLINE FISHERIES SUPPLIER RECOMMENDER SYSTEM</span></h1>
+          </header>
+          <!--welcome-message end-->
 
-					<input type="hidden" id="g-token" name="g-token">
+          <!--sub-form-->
+          <div class="sub-form text-center">
+            <div class="row">
+              <div class="col-md-5 center-block col-sm-8 col-xs-11">
+                <div class="input-group">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" data-bs-toggle="modal" data-bs-target="#classModal" style="border-radius:10px;">Search</button>
+                  </span>
+                </div>
+                <p id="mc-notification"></p>
+              </div>
+            </div>
+          </div>
+          <!--sub-form end-->
 
-					<div class="wrap-input100 validate-input m-b-26" data-validate="Email is required">
-						<span class="label-input100">Email</span>
-						<input class="input100" type="email" name="email" placeholder="Enter email">
-						<span class="focus-input100"></span>
-					</div>
+          <!-- Countdown-->
+          <ul class="countdown text-center">
 
-					<div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
-						<span class="label-input100">Password</span>
-						<input class="input100" type="password" name="password" placeholder="Enter password">
-						<span class="focus-input100"></span>
-					</div>
+          </ul>
+          <!-- Countdown end-->
 
-					<div class="flex-sb-m w-full p-b-30">
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--main end-->
 
-						<div>
-							<a href="public/user/create-account" class="txt1">
-								Create Account?
-							</a>
-						</div>
+  <!--Features-->
 
-						<div>
-							<a href="public/user/forgot-password" class="txt1">
-								Forgot Password?
-							</a>
-						</div>
-					</div>
+  <section class="features section-spacing">
+    <div class="container">
+      <h2 class="text-center">Featered services</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="wow fadeInUp product-features row">
+            <div class="col-md-2 col-sm-2 col-xs-2 text-center"><i class="fa fa-search fa-3x"></i></div>
+            <div class="col-md-10 col-sm-10 col-xs-10">
+              <!--features 3-->
+              <h4>Recommender</h4>
+              <p> A web-based system that will recommend the supplier of fishery based from the user location.</p>
+              <!--features 3 end-->
+            </div>
+          </div>
+          <div class="wow fadeInUp product-features row">
+            <div class="col-md-2 col-sm-2 col-xs-2 text-center"><i class="fa fa-map fa-3x"></i></div>
+            <div class="col-md-10 col-sm-10 col-xs-10">
+              <!--features 4-->
+              <h4>Google Maps</h4>
+              <p>By the use of google maps API. customer can see the exact location of supplier.</p>
+              <!--features 4 end-->
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="wow fadeInUp product-features row">
+            <div class="col-md-2 col-sm-2 col-xs-2 text-center"><i class="fa fa-calendar fa-3x"></i></div>
+            <div class="col-md-10 col-sm-10 col-xs-10">
+              <!--features 3-->
+              <h4>Availability</h4>
+              <p>Customer can see the products availability using calendar to be Maximize conversion through an aggregated, real-time, accurate view of inventory.</p>
+              <!--features 3 end-->
+            </div>
+          </div>
+          <div class="wow fadeInUp product-features row">
+            <div class="col-md-2 col-sm-2 col-xs-2 text-center"><i class="fa fa-shopping-cart fa-3x"></i></div>
+            <div class="col-md-10 col-sm-10 col-xs-10">
+              <!--features 4-->
+              <h4>Fish Products</h4>
+              <p>A web-based system that seller can input dynamic fishery products as many they want.</p>
+              <!--features 4 end-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-					<div class="container-login100-form-btn">
-						<button type="submit" name="btn-signin" id="submit" class="login100-form-btn">
-							Signin
-						</button>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
+  <div class="class-modal">
+    <div class="modal fade" id="classModal" tabindex="-1" aria-labelledby="classModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content" style="height: 700px;">
+          <div class="header"></div>
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <section class="data-table">
+              <div class="searchBx">
+                <input type="input" placeholder="search vendor. . . . . " class="search numbers" inputmode="numeric" name="search_box" id="search_box"><button class="searchBtn"><i class="fa fa-search" style="color: #FFF;"></i></button>
+              </div>
 
-	<script src="src/vendor/jquery/jquery-3.2.1.min.js"></script>
-	<script src="src/vendor/animsition/js/animsition.min.js"></script>
-	<script src="src/vendor/bootstrap/js/popper.js"></script>
-	<script src="src/vendor/bootstrap/js/bootstrap.min.js"></script>
-	<script src="src/vendor/select2/select2.min.js"></script>
-	<script src="src/vendor/daterangepicker/moment.min.js"></script>
-	<script src="src/vendor/daterangepicker/daterangepicker.js"></script>
-	<script src="src/vendor/countdowntime/countdowntime.js"></script>
-	<script src="src/js/main.js"></script>
-	<script src="src/node_modules/sweetalert/dist/sweetalert.min.js"></script>
-	<script src="src/node_modules/jquery/dist/jquery.min.js"></script>
-	
-	
+              <div class="table">
+                <div id="student-data">
+                </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <!--CONTACT END-->
 
-	<script>
+  <!--site-footer-->
+  <footer class="site-footer section-spacing">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
 
-		// CAPTCHA
-		grecaptcha.ready(function() {
-		grecaptcha.execute('<?php echo $SiteKEY ?>', {action: 'submit'}).then(function(token) {
-			document.getElementById("g-token").value = token;
-		});
-		});
+          <!--social-->
 
-	</script>
+          <ul class="social">
+            <li class="wow fadeInUp"><a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
+            <li class="wow fadeInUp"><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+            <li class="wow fadeInUp"><a href="https://plus.google.com/" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+          </ul>
 
-<!-- SWEET ALERT -->
-<?php
+          <!--social end-->
 
-	if(isset($_SESSION['status']) && $_SESSION['status'] !='')
-	{
-		?>
-		<script>
-			swal({
-			title: "<?php echo $_SESSION['status_title']; ?>",
-			text: "<?php echo $_SESSION['status']; ?>",
-			icon: "<?php echo $_SESSION['status_code']; ?>",
-			button: false,
-			timer: <?php echo $_SESSION['status_timer']; ?>,
-			});
-		</script>
-		<?php
-		unset($_SESSION['status']);
-	}
-?>
+          <small class="wow fadeInUp"><?php echo $system_copyright ?><i class="fa fa-heart pulse"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!--site-footer end-->
+
+  <!--PRELOAD-->
+  <div id="preloader">
+    <div id="status"></div>
+  </div>
+  <!--end PRELOAD-->
+  <script src="src/js/jquery-1.11.1.min.js"></script>
+  <script src="src/js/jquery.backstretch.min.js"></script>
+  <script src="src/js/wow.min.js"></script>
+  <script src="src/js/retina.min.js"></script>
+  <script src="src/js/tweetie.min.js"></script>
+  <script src="src/js/jquery.downCount.js"></script>
+  <script src="src/js/jquery.form.min.js"></script>
+  <script src="src/js/jquery.validate.min.js"></script>
+  <script src="src/js/jquery.simple-text-rotator.min.js"></script>
+  <script src="src/js/main.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+  <script src="src/js/gmap.js"></script>
+  <script src="src/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    //live search---------------------------------------------------------------------------------------//
+    $(document).ready(function() {
+
+      load_data(1);
+
+      function load_data(page, query = '') {
+        $.ajax({
+          url: "seller-data-table.php",
+          method: "POST",
+          data: {
+            page: page,
+            query: query
+          },
+          success: function(data) {
+            $('#student-data').html(data);
+          }
+        });
+      }
+
+      $(document).on('click', '.page-link', function() {
+        var page = $(this).data('page_number');
+        var query = $('#search_box').val();
+        load_data(page, query);
+      });
+
+      $('#search_box').keyup(function() {
+        var query = $('#search_box').val();
+        load_data(1, query);
+      });
+
+    });
+  </script>
 </body>
+
 </html>

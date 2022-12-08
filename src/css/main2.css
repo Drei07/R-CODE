@@ -1,0 +1,817 @@
+/* ------------------------------------------------------------------------------
+	Template Name: Orion
+	Author: Designstub
+	Author URI: http://www.designstub.com
+	License: GNU General Public License version 3.0
+	License URI: http://www.gnu.org/licenses/gpl-3.0.html
+	Version: 1.0
+-------------------------------------------------------------------------------*/
+
+/* ------------------------------------------------------------------------------
+   Typography
+-------------------------------------------------------------------------------*/
+
+
+@import url(http://fonts.googleapis.com/css?family=Source%20Sans%20Pro:300,400,500,600,700);
+/* ------------------------------------------------------------------------------
+   Global Styles
+-------------------------------------------------------------------------------*/
+
+
+body {
+	font-family: "Source Sans Pro";
+	font-weight: 300;
+	font-size:13px;
+	letter-spacing:1px;
+	line-height:1.8em;
+	overflow: auto;
+
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+:root {
+	--blue: #57b846;
+}
+p {
+	color: #888;
+}
+h1, h2, h3, h5, h6 {
+	font-weight: 400;
+}
+h4 {
+	font-weight: 300;
+	font-size: 15px;
+
+}
+a {
+	color: #57b846;
+}
+a:hover {
+	color: #4ba23c;
+	text-decoration: none;
+}
+a:focus {
+	outline: none;
+}
+img {
+	max-width: 100%;
+	height: auto;
+}
+ul, li {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.seller-data{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border: 2px solid var(--blue);
+	margin: 20px;
+	padding: 10px;
+	border-radius: 10px;
+}
+
+.seller-data .seller-head{
+	display: flex;
+	align-items: center;
+	justify-content: left;
+}
+
+.seller-data .seller-button{
+	display: flex;
+	align-items: center;
+	justify-content: left;
+}
+
+.seller-data .seller-button button{
+	border: none;
+	padding: 7px 3rem;
+	border-radius: 10px;
+	background-color: var(--blue);
+
+}
+
+.seller-data .seller-button button a{
+	color: #FFF;
+	font-size: 13px;
+	font-weight: 700;
+}
+
+.seller-data img{
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+}
+.seller-data .title{
+	font-size: 2.5rem;
+	color: #6a8f63;
+	margin-left: 1rem;
+}
+
+.no-data{
+	margin-top: 20rem;
+	font-size: 16px;
+	font-weight: 700;
+	color: rgba(121, 121, 121, 0.999);
+}
+
+.no-data-2 h3{
+	font-size: 2.2rem;
+	color: rgb(116, 113, 113);
+	text-align: center;
+	padding: 4rem 0rem;
+}
+
+
+
+ .dashboard-data-products {
+	margin-top: 36px;
+	display: grid;
+	align-items: center;
+	justify-content: center;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 200px));
+	grid-gap: 20px;
+}
+
+ .dashboard-data-products .dashboard-card-products{
+	border-radius: 10px;
+	background: var(--light);
+	box-shadow: 4px 4px 16px rgba(0, 0, 0, .05);
+	cursor: pointer;
+}
+
+ .dashboard-card-products .list img{
+	width: 100%;
+	height: 200px;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+}
+ .dashboard-card-products .list h1 {
+	padding: 0rem 1rem;
+	padding-top: .5rem;
+	font-size: 30px;
+	font-weight: 600;
+}
+ .dashboard-card-products .list p {
+	padding: 0rem 1rem;
+	font-size: 14px;
+}
+
+ .dashboard-card-products .list label{
+	color: var(--green);
+	padding:  1rem;
+	font-size: 14px;
+	font-weight: bold;
+}
+ .dashboard-card-products .list .icon {
+	font-size: 40px;
+	color: var(--blue);
+}
+
+.class-modal .modal-content {
+    border: hidden;
+    border-radius: 15px;
+    height: 100%;
+}
+
+.class-modal .modal-content .header {
+	background-color: var(--blue);
+	height: 30px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+
+.class-modal .modal-content .modal-header {
+    justify-content: left;
+	padding: 2rem;
+    border-bottom: hidden;
+}
+
+.class-modal .modal-content .modal-body {
+	padding: 2rem;
+	overflow: auto;
+}
+
+.class-modal .modal-content .modal-body .row>* {
+	padding-right: 0px;
+	font-size: 13px;
+}
+
+.class-modal .modal-content .modal-body .row .form-control {
+    width: 100%;
+	height: 40px;
+    outline: none;
+    color: var(--dark);
+    font-size: 13px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.class-modal .modal-content .modal-body .col-md-6 {
+	padding-bottom: .9rem;
+}
+
+.class-modal .modal-content .modal-body .col-md-6 input {
+	font-size: 13px;
+}
+
+.class-modal .modal-content .modal-body label span {
+	color: red;
+	font-size: 13px;
+	font-weight: bold;
+}
+
+.class-modal .modal-content .modal-body .addBtn {
+	border-top: none;
+	display: flex;
+	padding-top: 1rem;
+	justify-content: right;
+}
+
+/* SUBJECT CLASS MODAL */
+
+.class-modal .modal-content .modal-body .data-table{
+	display: block;
+    text-align: center;
+}
+
+.class-modal .modal-content .modal-body .data-table .searchBx{
+    display: flex;
+	justify-content: right;
+	padding-bottom: 1rem;
+
+}
+.class-modal .modal-content .modal-body .data-table .searchBx a{
+	background-color: var(--blue);
+	color: var(--light);
+	padding: 8px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+	font-weight: 500;
+	font-size: 14px;
+}
+
+.class-modal .modal-content .modal-body .data-table .searchBx a:hover {
+	background-color: var(--dark-blue);
+	color: var(--light);
+}
+
+.class-modal .modal-content .modal-body .data-table .searchBx .search{
+	box-shadow: 4px 4px 16px rgba(0, 0, 0, .1);
+    background-color: var(--light);
+    height: 35px;
+	border-style: none;
+    width: 270px;
+    font-size: 12px;
+    padding-left: 20px;
+    padding-right: 40px;
+    border-radius: 7px;
+    transition: all 0.3s ease;
+}
+
+.class-modal .modal-content .modal-body .data-table .searchBx .searchBtn{
+    background-color: var(--blue);
+	border-color: var(--blue);
+    border-top-right-radius: 7px;
+	border-bottom-right-radius: 7px;
+	border-style: none;
+    width:35px;
+	margin-left: -35px;
+	color: var(--light-green);
+}
+
+.class-modal .modal-content .modal-body .data-table .qrdataTable{
+    display: flex;
+    position: absolute;
+	
+}
+
+.class-modal .modal-content .modal-body .data-table .table{
+	overflow-x: auto;
+    overflow-y: auto;
+    font-size: 13px;
+    margin-right: 3rem;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    border-radius: 10px;
+    font-style: 50rem;
+}
+
+.class-modal .modal-content .modal-body .data-table .table td{
+	padding: 15px 9px;
+	width:auto;
+	padding-bottom: 5px;
+    text-align: center;
+	background-color: var(--light);
+	font-weight: 600;
+	color: var(--light-black);
+}
+
+
+.class-modal .modal-content .modal-body .data-table .table thead {
+    font-weight: 400;
+	font-size: 11px;
+    --bs-table-bg: var(--blue);
+	color: var(--light);
+	vertical-align: middle;
+}
+
+.table>:not(:first-child) {
+	border-top: none;
+}
+
+/* END OF MODALS */
+/* ------------------------------------------------------------------------------
+   main
+-------------------------------------------------------------------------------*/
+   
+.main {
+
+	background-size: cover;
+	padding: 3em 0 4.5em;
+	position: relative !important;
+	color: #fff;
+}
+.overlay {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: rgba(27, 32, 38, 0.5);
+	top: 0;
+}
+.logo {
+	text-align: center;
+	font-weight: 800;
+	font-size: 2.7rem;
+	margin-bottom: 2.25em;
+}
+.main h1 {
+	font-size: 36px;
+	font-weight: 700;
+	letter-spacing:7px;
+	text-transform:uppercase;
+}
+.welcome-message {
+	color: #6a8f63;
+	padding-top: 1.5em;
+}
+.rotate {
+	text-shadow: none !important;
+}
+
+
+/* ------------------------------------------------------------------------------
+   Subscription form 
+-------------------------------------------------------------------------------*/
+   
+ .form-control::-webkit-input-placeholder {
+ color: #727272;
+ font-weight: 300;
+}
+ .form-control:-moz-placeholder {
+ color: #727272;
+ font-weight: 300;
+}
+ .form-control::-moz-placeholder {
+ color: #727272;
+ font-weight: 300;
+}
+ .form-control:-ms-input-placeholder {
+ color: #727272;
+ font-weight: 300;
+}
+.sub-form {
+	padding-top: 1.5em;
+}
+.center-block {
+	float: none;
+}
+.form-control {
+	background-color: #fff;
+	border: 1px solid #fff;
+	box-shadow: none;
+	height: 50px;
+	font-weight: 300;
+}
+.form-control:focus {
+	border-color: #fff;
+	outline: 0;
+	box-shadow: none;
+}
+.input-group-btn>.btn:hover, .input-group-btn>.btn:focus, .input-group-btn>.btn:active {
+	z-index: 1;
+}
+.btn-default {
+	color: #fff;
+	background-color: #57b846;
+	border-color: #57b846;
+ -webkit-transition: all .5s ease-out;
+ transition: all .5s ease-out;
+	padding: 12px 3.5em;
+}
+.btn-default:hover, .btn-default:focus, .btn-default:active {
+	color: #fff;
+	background-color: #4ba23c;
+	border-color: #4ba23c;
+}
+.btn:active:focus, .btn-default:focus, .btn:focus, .btn-default:active {
+	outline: none;
+}
+#mc-notification {
+	margin: .75em 0 0;
+	color: #FFF;
+}
+.alert, .success {
+	padding: .5em 1em;
+	border-radius: 4px;
+	display: inline-block;
+}
+.alert {
+	background-color: rgba(231, 76, 60, 0.7);
+}
+.success {
+	background-color: rgba(39, 174, 96, 0.7);
+}
+.alert i, .success i {
+	padding-right: .5em;
+}
+.fa-paper-plane {
+	padding-left: .5em;
+}
+/* ------------------------------------------------------------------------------
+   Countdown styles
+-------------------------------------------------------------------------------*/
+   
+ul.countdown {
+	list-style: none;
+	display: block;
+	margin-bottom: 0;
+	padding: 1.5em 0 0;
+}
+.countdown p {
+	color: #fff;
+}
+ul.countdown li {
+	display: inline-block;
+}
+ul.countdown li span {
+	font-size: 27px;
+	font-weight:600;
+}
+ul.countdown li.seperator {
+	font-size: 30px;
+	vertical-align: top;
+	padding: 0 8px;
+}
+ul.countdown li p {
+	font-size: 13px;
+	margin-bottom: 0;
+	letter-spacing:3px;
+}
+/* ------------------------------------------------------------------------------
+   Social 
+-------------------------------------------------------------------------------*/
+
+.social {
+	float: none;
+}
+.social li {
+	display: inline-block;
+	padding-right: .8em;
+}
+.social li:last-child {
+	padding-right: 0;
+}
+.social li a {
+	display: block;
+	width: 38px;
+	height: 38px;
+	line-height: 38px;
+	color: #fff;
+	border-radius: 50%;
+	background: #57b846;
+	position: relative;
+ -webkit-transition: all .8s ease;
+ transition: all .8s ease;
+}
+.social li a:hover {
+	color: #fff;
+	background: #4ba23c;
+}
+/* ------------------------------------------------------------------------------
+   Features
+-------------------------------------------------------------------------------*/
+   
+.section-spacing {
+	padding: 4.5em 0;
+}
+.features.section-spacing {
+	padding-bottom: 2.25em;
+}
+.features h2, .product-features h4 {
+	margin-top: 0;
+}
+.features h2 {
+	margin-bottom: 1.5em;
+	font-weight:700;
+	font-size:27px;
+	text-transform:uppercase;
+	letter-spacing:3px;
+}
+.product-features {
+	margin-bottom: 3em;
+}
+.product-features p {
+	margin-bottom: 0;
+	color: #888;
+}
+/* ------------------------------------------------------------------------------
+   Twitter feed
+-------------------------------------------------------------------------------*/
+
+
+.center-block {
+	float: none;
+}
+.twitter-feed {
+	background: url(../img/bg-t.jpg) center center no-repeat fixed;
+	background-size: cover;
+	color: #fff;
+	position: relative;
+}
+.overlay-t {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: rgba(27, 32, 38, 0.8);
+	top: 0;
+}
+.twitter-feed h2, .contact h2 {
+	margin: 0;
+}
+.twitter-icon .fa-twitter {
+	color: #55ACEE;
+	padding: 24px 0 12px;
+	font-size: 3em;
+}
+/* ------------------------------------------------------------------------------
+   Contact
+-------------------------------------------------------------------------------*/
+ 
+.contact h2 {
+	margin-bottom: 1.5em;
+		font-weight:700;
+	font-size:27px;
+	text-transform:uppercase;
+	letter-spacing:3px;
+}
+.contact-form {
+	margin-top: 3em;
+}
+.contact-form .form-control {
+	border-color: #ddd;
+	margin-bottom: .75em;
+	padding: .75em 12px;
+}
+.contact-form label.error {
+	margin-bottom: 12px;
+	font-weight: 300;
+	color: #ea5050;
+}
+.contact .btn-default {
+	width: 100%;
+}
+/* ------------------------------------------------------------------------------
+   contact Form Validation
+-------------------------------------------------------------------------------*/
+   
+
+.contact-form label.error i {
+	padding-right: 8px;
+}
+.success-cf, .error-cf {
+	display: none;
+}
+.success-cf p {
+	background: rgba(39, 174, 96, 0.7);
+}
+.error-cf p {
+	background: rgba(231, 76, 60, 0.7);
+}
+.contact-form {
+	position: relative;
+}
+.contact-form .success-cf p, .contact-form .error-cf p {
+	position: absolute;
+	display: block;
+	top: 40%;
+	left: 0;
+	right: 0;
+	text-align: center;
+	z-index: 10;
+	color: #fff;
+	border-radius: 2px;
+	padding: .75em;
+}
+/* ------------------------------------------------------------------------------
+   Map
+
+/* ------------------------------------------------------------------------------
+   footer
+-------------------------------------------------------------------------------*/
+   
+.site-footer {
+	background: #F1F1F1;
+}
+.site-footer.section-spacing {
+	padding: 4.5em 0;
+}
+.site-footer h3 {
+	margin: 0;
+}
+.site-footer .social {
+	float: none;
+	margin-bottom: 1.5em;
+}
+.site-footer small {
+	color: #888;
+}
+/* ------------------------------------------------------------------------------
+   scroll top
+-------------------------------------------------------------------------------*/
+   
+.scroll-top {
+	margin-bottom: 0;
+}
+.scroll-top a {
+	position: fixed;
+	bottom: 2em;
+	right: 2em;
+	text-decoration: none;
+	color: #fff;
+	background-color: rgba(0, 0, 0, 0.3);
+	font-size: 12px;
+	padding: .8em 1em;
+	display: none;
+	z-index: 200;
+	border-radius: 5px;
+ -webkit-transition: background .5s ease-in;
+ transition: background .5s ease-in;
+}
+.scroll-top a:hover {
+	background: #57b846;
+}
+/* ------------------------------------------------------------------------------
+   Preloader styles
+-------------------------------------------------------------------------------*/
+
+#preloader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #fefefe;
+	z-index: 9999;
+	height: 100%;
+	height: 100%;
+}
+#status {
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	background: url(../img/load.gif) no-repeat center center;
+	margin: -170px 0 0 -100px;
+}
+
+/* ------------------------------------------------------------------------------
+   Small devices (tablets, 768px and up)
+-------------------------------------------------------------------------------*/
+   
+@media (min-width: 768px) {
+ .main {
+padding: 3em 0 7.5em;
+}
+ .logo {
+ text-align: justify;
+ margin-bottom: 0;
+}
+ .welcome-message {
+padding-top: 6em;
+}
+ .social {
+float: right;
+}
+ ul.countdown {
+padding-top: 6em;
+}
+ ul.countdown li span {
+font-size: 27px;
+}
+ ul.countdown li.seperator {
+ font-size: 27px;
+ padding: 0 20px;
+}
+}
+
+/* ------------------------------------------------------------------------------
+   Medium devices (desktops, 992px and up) 
+-------------------------------------------------------------------------------*/
+   
+@media (min-width: 992px) {
+ .main {
+ padding: 3em 0 16em;
+ position: fixed !important;
+ top: 0;
+ z-index: 1;
+ width: 100%;
+}
+ .features, .twitter-feed, .contact, .site-footer {
+ position: relative;
+ z-index: 2;
+}
+ .welcome-message {
+padding-top: 9em;
+}
+ .section-spacing {
+padding: 6em 0;
+}
+ .features.section-spacing {
+ padding: 6em 0 3em;
+ margin-top: 46.8em;
+}
+ .product-features {
+margin-bottom: 3.75em;
+}
+ .features.section-spacing, .contact {
+background: #fff;
+}
+ .contact-form {
+margin-top: 0;
+}
+ .animated {
+ -webkit-animation-duration: 1s;
+ animation-duration: 1s;
+ -webkit-animation-fill-mode: both;
+ animation-fill-mode: both;
+}
+ @-webkit-keyframes fadeInUp {
+0% {
+opacity:0;
+-webkit-transform:translate3d(0, 100%, 0);
+transform:translate3d(0, 100%, 0);
+}
+100% {
+opacity:1;
+-webkit-transform:none;
+transform:none;
+}
+}
+@keyframes fadeInUp {
+0% {
+opacity:0;
+-webkit-transform:translate3d(0, 100%, 0);
+-ms-transform:translate3d(0, 100%, 0);
+transform:translate3d(0, 100%, 0);
+}
+100% {
+opacity:1;
+-webkit-transform:none;
+-ms-transform:none;
+transform:none;
+}
+}
+ .fadeInUp {
+ -webkit-animation-name: fadeInUp;
+ animation-name: fadeInUp;
+}
+}
+
+/* ------------------------------------------------------------------------------
+   small devices 
+-------------------------------------------------------------------------------*/
+   
+
+
+@media (max-width: 320px) {
+ ul.countdown li span {
+font-size: 21px;
+}
+ ul.countdown li.seperator {
+ font-size: 25.629px;
+ vertical-align: top;
+ padding: 0 2px;
+}
+ ul.countdown li p {
+font-size: 12.642px;
+}
+}
